@@ -12,9 +12,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { 
   ChevronLeft, 
   ShoppingCart, 
-  ShieldCheck, 
-  Truck, 
-  RefreshCw, 
   Plus, 
   Minus, 
   CheckCircle2, 
@@ -71,6 +68,7 @@ export default function ProductDetailsPage() {
       </Button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+        {/* Left Column: Image Gallery */}
         <div className="space-y-4 max-w-sm mx-auto w-full">
           <div className="relative h-64 w-full overflow-hidden rounded-[2rem] bg-white border-4 border-slate-50 shadow-lg">
             <Image
@@ -100,7 +98,9 @@ export default function ProductDetailsPage() {
           )}
         </div>
 
+        {/* Right Column: Content */}
         <div className="space-y-6 py-2">
+          {/* Header & Pricing */}
           <div className="space-y-2">
             <Badge className="bg-primary/10 text-primary border-none uppercase text-[10px] font-bold tracking-widest px-3 py-1 rounded-full">
               {product.category}
@@ -115,6 +115,46 @@ export default function ProductDetailsPage() {
             </div>
           </div>
 
+          {/* Primary Action (Add to Cart) - Moved ABOVE description as requested */}
+          <div className="space-y-4 py-4 border-y border-slate-100">
+            <div className="flex items-center gap-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Quantity</span>
+              <div className="flex items-center gap-3 bg-slate-100 p-1 rounded-full border border-slate-200">
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="h-8 w-8 rounded-full bg-white shadow-sm hover:bg-slate-50"
+                  onClick={() => setQuantity(q => Math.max(1, q - 1))}
+                >
+                  <Minus className="h-3 w-3" />
+                </Button>
+                <span className="w-8 text-center font-bold text-lg text-slate-800">{quantity}</span>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="h-8 w-8 rounded-full bg-white shadow-sm hover:bg-slate-50"
+                  onClick={() => setQuantity(q => q + 1)}
+                >
+                  <Plus className="h-3 w-3" />
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                className="flex-1 h-14 text-lg bg-primary text-white hover:bg-primary/90 rounded-full font-black shadow-lg"
+                onClick={handleAddToCart}
+              >
+                <ShoppingCart className="h-5 w-5 mr-2" /> Add to Basket
+              </Button>
+              <Button size="lg" variant="outline" className="flex-1 h-14 text-lg rounded-full border-primary/20 hover:bg-primary/5 text-primary font-bold">
+                Bulk Inquiry
+              </Button>
+            </div>
+          </div>
+
+          {/* Detailed Information */}
           <div className="space-y-8">
             {/* Composition */}
             {product.composition && (
@@ -197,48 +237,10 @@ export default function ProductDetailsPage() {
               </div>
             )}
           </div>
-
-          <div className="space-y-4 pt-4">
-            <div className="flex items-center gap-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Quantity</span>
-              <div className="flex items-center gap-3 bg-slate-100 p-1 rounded-full border border-slate-200">
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="h-8 w-8 rounded-full bg-white shadow-sm hover:bg-slate-50"
-                  onClick={() => setQuantity(q => Math.max(1, q - 1))}
-                >
-                  <Minus className="h-3 w-3" />
-                </Button>
-                <span className="w-8 text-center font-bold text-lg text-slate-800">{quantity}</span>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="h-8 w-8 rounded-full bg-white shadow-sm hover:bg-slate-50"
-                  onClick={() => setQuantity(q => q + 1)}
-                >
-                  <Plus className="h-3 w-3" />
-                </Button>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button 
-                size="lg" 
-                className="flex-1 h-14 text-lg bg-primary text-white hover:bg-primary/90 rounded-full font-black shadow-lg"
-                onClick={handleAddToCart}
-              >
-                <ShoppingCart className="h-5 w-5 mr-2" /> Add to Basket
-              </Button>
-              <Button size="lg" variant="outline" className="flex-1 h-14 text-lg rounded-full border-primary/20 hover:bg-primary/5 text-primary font-bold">
-                Bulk Inquiry
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* Related Products */}
+      {/* Related Products Section */}
       {relatedProducts.length > 0 && (
         <section className="pt-16 border-t border-slate-100">
           <div className="flex justify-between items-end mb-8">

@@ -47,7 +47,6 @@ export const Footer = () => {
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/products" className="hover:text-primary transition-colors">Shop</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
             </ul>
 
             <div className="space-y-3">
@@ -66,18 +65,22 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Right Column: Get in touch and Map */}
+          {/* Right Column: Get in touch and Google Map */}
           <div className="space-y-6">
             <h3 className="text-[#3ab8c5] font-bold text-xl text-center md:text-left">Get in touch</h3>
             
-            <div className="rounded-xl overflow-hidden border-2 border-white shadow-sm relative h-32 w-full group max-w-sm mx-auto md:mx-0">
-              <Image 
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXB8ZW58MHx8fHwxNzcwOTIyMTc4fDA&ixlib=rb-4.1.0&q=80&w=400"
-                alt="Office Location Map"
-                fill
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-              />
-              <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+            {/* Real Interactive Google Map */}
+            <div className="rounded-xl overflow-hidden border-2 border-white shadow-sm relative h-40 w-full max-w-sm mx-auto md:mx-0">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.584344445558!2d77.27367857549688!3d28.52180867572703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3e970228e3d%3A0xc3437f90356c9d2d!2sOkhla%20Phase%20II%2C%20Okhla%20Industrial%20Estate%2C%20New%20Delhi%2C%20Delhi%20110020!5e0!3m2!1sen!2sin!4v1710922178999!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+              ></iframe>
             </div>
 
             <ul className="space-y-3 text-[#8a6a8a] font-bold text-xs">
