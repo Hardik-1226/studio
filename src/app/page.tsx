@@ -12,16 +12,23 @@ export default function Home() {
   const aboutImage = PlaceHolderImages.find(img => img.id === 'about-image');
 
   const partners = [
-    { name: "Global Health Care", text: "Trusted Distributor" },
-    { name: "PharmaLink India", text: "Logistics Partner" },
-    { name: "MediCore Systems", text: "Technology Provider" },
-    { name: "SafeCare Labs", text: "Quality Auditor" },
-    { name: "Unity Hospitals", text: "Institutional Partner" },
-    { name: "BioTech Solutions", text: "Innovation Partner" },
-    { name: "Rapid Delivery Co", text: "Supply Chain" },
-    { name: "HealthFirst Clinics", text: "Preferred Provider" },
-    { name: "Nova Pharmaceuticals", text: "Manufacturing Partner" },
-    { name: "Apex Medicals", text: "Regional Distributor" },
+    { name: "Max Gurgaon", text: "Hospital Partner" },
+    { name: "Max BLK", text: "Hospital Partner" },
+    { name: "Max Saket", text: "Hospital Partner" },
+    { name: "Yatharth Faridabad", text: "Hospital Partner" },
+    { name: "Yatharth Sector 110", text: "Hospital Partner" },
+    { name: "Yatharth Bisrakh", text: "Hospital Partner" },
+    { name: "Yatharth Greater Noida", text: "Hospital Partner" },
+    { name: "Fortis Mohali", text: "Hospital Partner" },
+    { name: "Accord Faridabad", text: "Hospital Partner" },
+    { name: "Marengo Asia Faridabad", text: "Hospital Partner" },
+    { name: "Indian Spinal Injuries Centre", text: "Hospital Partner" },
+    { name: "CK Birla Hospital, Gurgaon", text: "Hospital Partner" },
+    { name: "Paras Hospital, Gurgaon", text: "Hospital Partner" },
+    { name: "Paras Hospital, Panchkula", text: "Hospital Partner" },
+    { name: "Artemis Hospital", text: "Hospital Partner" },
+    { name: "Fortis NCR (Total Health)", text: "Hospital Partner" },
+    { name: "Manipal Hospital, Ghaziabad", text: "Hospital Partner" },
   ];
 
   return (
@@ -219,12 +226,12 @@ export default function Home() {
       {/* Trusted Partners */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 text-center mb-10">
-          <h2 className="text-3xl font-bold text-slate-800 mb-2">Trusted Strategic Partners</h2>
-          <p className="text-slate-500 text-lg max-w-xl mx-auto">Collaborating with leaders across the healthcare ecosystem.</p>
+          <h2 className="text-3xl font-bold text-slate-800 mb-2">Our Trusted Hospital Network</h2>
+          <p className="text-slate-500 text-lg max-w-xl mx-auto">Collaborating with India's leading healthcare institutions.</p>
         </div>
         
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {partners.map((partner, index) => (
               <div key={index} className="flex flex-col items-center p-6 bg-white rounded-[2rem] shadow-sm hover:shadow-lg hover:translate-y-[-3px] transition-all duration-300 text-center space-y-3 group border border-slate-100">
                 <div className="relative h-12 w-20 opacity-40 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500">
@@ -236,7 +243,7 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[12px] text-slate-800">{partner.name}</h4>
+                  <h4 className="font-bold text-[12px] text-slate-800 leading-tight">{partner.name}</h4>
                   <p className="text-[9px] text-primary font-black uppercase tracking-widest mt-0.5">{partner.text}</p>
                 </div>
               </div>
