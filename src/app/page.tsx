@@ -40,32 +40,35 @@ export default function Home() {
       {/* Visual Themed Hero Section */}
       <section className="relative bg-[#f0f9fa] min-h-[85vh] flex flex-col items-center justify-center text-center px-4 pt-16 pb-20 overflow-hidden">
         
-        {/* Hanging Icons - Slow Animations */}
+        {/* Hanging Icons - Ultra-Slow Animations */}
         <div className="absolute top-0 inset-x-0 h-full pointer-events-none z-0 hidden md:flex justify-around opacity-40">
-          {[...Array(8)].map((_, i) => (
+          {[...Array(12)].map((_, i) => (
             <div 
               key={i} 
               className="flex flex-col items-center animate-bounce" 
               style={{ 
-                animationDuration: `${6 + i}s`, 
-                animationDelay: `${i * 0.5}s`,
-                marginTop: `${-20 + (i * 10)}px` 
+                animationDuration: `${10 + i * 2}s`, 
+                animationDelay: `${i * 0.8}s`,
+                marginTop: `${-30 + (i % 4) * 15}px` 
               }}
             >
-              <div className="h-24 md:h-48 w-[1px] bg-slate-300"></div>
-              {i % 3 === 0 ? (
+              <div className="h-24 md:h-56 w-[1px] bg-slate-300"></div>
+              {i % 4 === 0 ? (
                 <Plus className="h-5 w-5 text-primary" />
-              ) : i % 3 === 1 ? (
-                <Heart className="h-4 w-4 text-accent fill-accent" />
-              ) : (
+              ) : i % 4 === 1 ? (
+                <Heart className="h-4 w-4 text-accent fill-accent animate-pulse" style={{ animationDuration: '4s' }} />
+              ) : i % 4 === 2 ? (
                 <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+              ) : (
+                <Activity className="h-4 w-4 text-primary" />
               )}
             </div>
           ))}
         </div>
 
         <div className="container relative z-10 mx-auto">
-          <div className="flex flex-col items-center space-y-6 max-w-4xl mx-auto">
+          {/* Main Hero Content */}
+          <div className="flex flex-col items-center space-y-6 max-w-4xl mx-auto relative">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-slate-800 leading-[1.1] uppercase">
               EMPOWERING<br />
               <span className="text-slate-800">WELLNESS THROUGH</span><br />
@@ -83,22 +86,22 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Left Illustrations - Adjusted to avoid overlap */}
-          <div className="absolute bottom-0 left-4 hidden 2xl:flex items-end pointer-events-none opacity-30 3xl:opacity-100 transition-opacity">
-            <div className="relative h-[200px] w-[140px] animate-in slide-in-from-bottom duration-1000">
+          {/* Left Illustrations - Positioned to side to avoid overlap */}
+          <div className="absolute bottom-0 left-0 hidden xl:flex items-end pointer-events-none opacity-40 hover:opacity-100 transition-opacity duration-700">
+            <div className="relative h-[180px] w-[120px] animate-in slide-in-from-left duration-1000">
               <Image src={doc1?.imageUrl || ''} alt="Doctor 1" fill className="object-contain" />
             </div>
-            <div className="relative h-[240px] w-[180px] -ml-12 animate-in slide-in-from-bottom duration-1000 delay-200">
+            <div className="relative h-[220px] w-[160px] -ml-10 animate-in slide-in-from-left duration-1000 delay-200">
               <Image src={doc2?.imageUrl || ''} alt="Doctor 2" fill className="object-contain" />
             </div>
           </div>
 
-          {/* Right Feature Circles - Adjusted to avoid overlap */}
-          <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden 2xl:flex flex-col gap-6 pointer-events-none opacity-30 3xl:opacity-100 transition-opacity">
+          {/* Right Feature Circles - Positioned to far right */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-8 pointer-events-none opacity-40 hover:opacity-100 transition-opacity duration-700">
             <div className="h-24 w-24 rounded-full border-4 border-white shadow-2xl overflow-hidden relative animate-in fade-in zoom-in duration-1000 delay-500">
               <Image src={circle1?.imageUrl || ''} alt="Med 1" fill className="object-cover" />
             </div>
-            <div className="h-32 w-32 rounded-full border-4 border-white shadow-2xl overflow-hidden relative -mr-4 animate-in fade-in zoom-in duration-1000 delay-700">
+            <div className="h-32 w-32 rounded-full border-4 border-white shadow-2xl overflow-hidden relative mr-4 animate-in fade-in zoom-in duration-1000 delay-700">
               <Image src={circle2?.imageUrl || ''} alt="Med 2" fill className="object-cover" />
             </div>
           </div>
