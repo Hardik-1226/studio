@@ -5,26 +5,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 96%;
+    --background: 180 33% 98%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 195 53% 79%;
+    --primary: 187 63% 54%;
     --primary-foreground: 222 47% 11%;
-    --secondary: 195 30% 95%;
+    --secondary: 187 30% 90%;
     --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
+    --muted: 187 20% 95%;
     --muted-foreground: 215 16% 47%;
-    --accent: 120 73% 75%;
-    --accent-foreground: 120 73% 10%;
+    --accent: 350 80% 70%;
+    --accent-foreground: 350 80% 10%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 195 53% 79%;
-    --radius: 0.5rem;
+    --border: 187 32% 91%;
+    --input: 187 32% 91%;
+    --ring: 187 63% 54%;
+    --radius: 2rem;
   }
 }
 
@@ -35,4 +35,29 @@
   body {
     @apply bg-background text-foreground font-body antialiased leading-relaxed;
   }
+}
+
+.hero-gradient {
+  background: linear-gradient(180deg, #E0F7FA 0%, #FFFFFF 100%);
+}
+
+.wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.wave-bottom .shape-fill {
+  fill: #3AB8C5;
 }
