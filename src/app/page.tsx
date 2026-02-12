@@ -5,11 +5,15 @@ import { Badge } from '@/components/ui/badge';
 import { PRODUCTS } from '@/lib/products';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity, Star } from 'lucide-react';
+import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity, Star, Stethoscope } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const aboutImage = PlaceHolderImages.find(img => img.id === 'about-image');
+  const doc1 = PlaceHolderImages.find(img => img.id === 'doctor-1');
+  const doc2 = PlaceHolderImages.find(img => img.id === 'doctor-2');
+  const circle1 = PlaceHolderImages.find(img => img.id === 'med-circle-1');
+  const circle2 = PlaceHolderImages.find(img => img.id === 'med-circle-2');
 
   const partners = [
     { name: "Max Gurgaon", text: "Hospital Partner" },
@@ -33,39 +37,75 @@ export default function Home() {
 
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
-      {/* Visual Themed Hero Section */}
-      <section className="relative hero-gradient min-h-[50vh] flex flex-col items-center justify-center text-center px-4 pt-12 pb-16">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
-          <div className="absolute top-0 left-[10%] animate-bounce duration-[3000ms]"><div className="h-10 w-[1px] bg-primary mx-auto"></div><Heart className="text-primary h-4 w-4" /></div>
-          <div className="absolute top-0 right-[15%] animate-pulse"><Plus className="text-accent h-6 w-6" /></div>
+      {/* Visual Themed Hero Section - Updated to match screenshot */}
+      <section className="relative bg-[#f0f9fa] min-h-[85vh] flex flex-col items-center justify-center text-center px-4 pt-20 pb-16 overflow-hidden">
+        
+        {/* Hanging Icons - Animation Layer */}
+        <div className="absolute top-0 inset-x-0 h-48 pointer-events-none z-0 hidden md:flex justify-around opacity-60">
+          <div className="flex flex-col items-center animate-bounce duration-[3000ms]">
+            <div className="h-24 w-[1px] bg-slate-300"></div>
+            <Plus className="h-6 w-6 text-primary" />
+          </div>
+          <div className="flex flex-col items-center animate-pulse duration-[4000ms] delay-500">
+            <div className="h-32 w-[1px] bg-slate-300"></div>
+            <Heart className="h-5 w-5 text-accent" />
+          </div>
+          <div className="flex flex-col items-center animate-bounce duration-[3500ms] delay-1000">
+            <div className="h-20 w-[1px] bg-slate-300"></div>
+            <div className="h-4 w-4 rounded-full bg-primary/40"></div>
+          </div>
+          <div className="flex flex-col items-center animate-pulse duration-[5000ms] delay-200">
+            <div className="h-40 w-[1px] bg-slate-300"></div>
+            <Stethoscope className="h-6 w-6 text-slate-400" />
+          </div>
+          <div className="flex flex-col items-center animate-bounce duration-[4500ms] delay-700">
+            <div className="h-28 w-[1px] bg-slate-300"></div>
+            <Plus className="h-6 w-6 text-accent" />
+          </div>
         </div>
 
-        <div className="container relative z-10 mx-auto max-w-5xl">
-          <div className="flex flex-col items-center space-y-6">
-            <Badge className="bg-primary/10 text-primary border-none uppercase text-[10px] font-black tracking-[0.3em] px-4 py-1.5 rounded-full mb-2">
-              Innovative Healthcare Solutions
-            </Badge>
-            <h1 className="text-3xl md:text-6xl font-black tracking-tight text-slate-800 leading-[1.1] uppercase">
-              Empowering <span className="text-primary">Wellness</span><br />
-              Through Innovation
+        <div className="container relative z-10 mx-auto max-w-6xl">
+          <div className="flex flex-col items-center space-y-8">
+            <h1 className="text-4xl md:text-7xl font-black tracking-tight text-slate-800 leading-[1] uppercase">
+              EMPOWERING<br />
+              <span className="text-slate-800">WELLNESS THROUGH</span><br />
+              <span className="text-primary">INNOVATION</span>
             </h1>
-            <p className="text-sm md:text-lg text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
-              Reliable pharmaceutical products for hospitals, clinics, and healthcare professionals across India.
+            <p className="text-sm md:text-xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
+              Reliable pharmaceutical products for hospitals, clinics & healthcare professionals across India.
             </p>
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+            <div className="pt-6">
               <Link href="/products">
-                <Button size="lg" className="rounded-full px-10 h-14 text-sm bg-primary text-white hover:bg-primary/90 shadow-xl transition-all font-black uppercase tracking-widest">
-                  Explore Products
-                </Button>
-              </Link>
-              <Link href="/about">
-                <Button size="lg" variant="outline" className="rounded-full px-10 h-14 text-sm border-primary/20 text-slate-700 hover:bg-slate-50 transition-all font-black uppercase tracking-widest">
-                  Our Journey
+                <Button size="lg" className="rounded-full px-12 h-16 text-lg bg-[#3AB8C5] text-white hover:bg-[#32a2ae] shadow-xl transition-all font-black uppercase tracking-widest">
+                  Explore Our Products
                 </Button>
               </Link>
             </div>
           </div>
+
+          {/* Illustrations - Bottom Left */}
+          <div className="absolute bottom-0 left-0 hidden lg:flex items-end pointer-events-none">
+            <div className="relative h-[300px] w-[200px] animate-in slide-in-from-bottom duration-1000">
+              <Image src={doc1?.imageUrl || ''} alt="Doctor 1" fill className="object-contain" />
+            </div>
+            <div className="relative h-[350px] w-[250px] -ml-16 animate-in slide-in-from-bottom duration-1000 delay-200">
+              <Image src={doc2?.imageUrl || ''} alt="Doctor 2" fill className="object-contain" />
+            </div>
+          </div>
+
+          {/* Feature Circles - Center Right */}
+          <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 pointer-events-none">
+            <div className="h-32 w-32 rounded-full border-4 border-white shadow-2xl overflow-hidden relative animate-in fade-in zoom-in duration-1000 delay-500">
+              <Image src={circle1?.imageUrl || ''} alt="Med 1" fill className="object-cover" />
+            </div>
+            <div className="h-40 w-40 rounded-full border-4 border-white shadow-2xl overflow-hidden relative -mr-10 animate-in fade-in zoom-in duration-1000 delay-700">
+              <Image src={circle2?.imageUrl || ''} alt="Med 2" fill className="object-cover" />
+            </div>
+          </div>
         </div>
+        
+        {/* Wave Decorative Blob - Bottom Right */}
+        <div className="absolute bottom-0 right-0 h-40 w-40 bg-primary/10 rounded-tl-full -mr-10 -mb-10 pointer-events-none"></div>
       </section>
 
       {/* About Section */}
