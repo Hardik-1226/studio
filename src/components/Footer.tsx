@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -17,26 +16,26 @@ export const Footer = () => {
           {/* Left Column: Logo and Description */}
           <div className="space-y-6">
             <div className="flex flex-col items-center md:items-start gap-2">
-              <div className="h-16 w-16 rounded-full border-4 border-primary flex items-center justify-center bg-white shadow-sm overflow-hidden p-1.5">
-                <div className="relative w-full h-full">
-                  <svg viewBox="0 0 100 100" className="text-primary w-full h-full">
-                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2" />
-                    <path d="M30 30 V70 M70 30 V70 M30 50 H70" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
-                    <path d="M50 20 V80 M20 50 H80" stroke="currentColor" strokeWidth="2" opacity="0.3" />
-                  </svg>
-                </div>
+              <div className="h-20 w-20 flex items-center justify-center">
+                <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current">
+                  <path d="M50 5 C25.1 5 5 25.1 5 50 C5 74.9 25.1 95 50 95 C74.9 95 95 74.9 95 50 C95 25.1 74.9 5 50 5 Z M50 88 C29 88 12 71 12 50 C12 29 29 12 50 12 C71 12 88 29 88 50 C88 71 71 88 50 88 Z" />
+                  <path d="M42 35 H58 V42 H65 V58 H58 V65 H42 V58 H35 V42 H42 V35 Z" />
+                  <path d="M50 25 C52.8 25 55 27.2 55 30 C55 32.8 52.8 35 50 35 C47.2 35 45 32.8 45 30 C45 27.2 47.2 25 50 25 Z" />
+                  <path d="M50 40 C40 40 35 45 35 55 L50 75 L65 55 C65 45 60 40 50 40 Z" />
+                  <path d="M30 80 Q50 85 70 80 L72 78 Q50 83 28 78 Z" />
+                </svg>
               </div>
               <div className="text-center md:text-left">
-                <h2 className="font-headline font-bold text-primary text-[10px] tracking-[0.2em] uppercase">
+                <h2 className="font-headline font-black text-primary text-lg tracking-tighter uppercase">
                   Health Plus Innovation
                 </h2>
-                <p className="font-headline font-bold text-primary text-[8px] tracking-widest uppercase opacity-80">
+                <p className="font-headline font-bold text-slate-400 text-[10px] tracking-[0.3em] uppercase opacity-80">
                   Pvt. Ltd.
                 </p>
               </div>
             </div>
             <p className="text-[#8a6a8a] text-xs leading-relaxed text-center md:text-left font-medium">
-              At <span className="font-bold">Health Plus Innovation (HPI)</span>, we are committed to improving lives through safe, effective, and innovative healthcare solutions.
+              At <span className="font-bold text-primary">Health Plus Innovation (HPI)</span>, we are committed to improving lives through safe, effective, and innovative healthcare solutions.
             </p>
           </div>
 
@@ -45,7 +44,7 @@ export const Footer = () => {
             <h3 className="text-[#3ab8c5] font-bold text-xl">Useful Links</h3>
             <ul className="space-y-2 text-[#8a6a8a] font-bold text-xs">
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/products" className="hover:text-primary transition-colors">Shop</Link></li>
+              <li><Link href="/products" className="hover:text-primary transition-colors">Catalog</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
 
@@ -69,7 +68,6 @@ export const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-[#3ab8c5] font-bold text-xl text-center md:text-left">Get in touch</h3>
             
-            {/* Real Interactive Google Map */}
             <div className="rounded-xl overflow-hidden border-2 border-white shadow-sm relative h-40 w-full max-w-sm mx-auto md:mx-0">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.584344445558!2d77.27367857549688!3d28.52180867572703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3e970228e3d%3A0xc3437f90356c9d2d!2sOkhla%20Phase%20II%2C%20Okhla%20Industrial%20Estate%2C%20New%20Delhi%2C%20Delhi%20110020!5e0!3m2!1sen!2sin!4v1710922178999!5m2!1sen!2sin" 

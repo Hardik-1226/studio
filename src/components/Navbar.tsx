@@ -46,7 +46,7 @@ export const Navbar = () => {
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-8 w-8" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-[280px]">
@@ -92,12 +92,23 @@ export const Navbar = () => {
               </SheetContent>
             </Sheet>
             <Link href="/" className="flex items-center gap-3">
-              <div className="h-16 w-16 rounded-full bg-primary flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-4xl">H</span>
+              <div className="relative h-16 w-16 flex items-center justify-center">
+                <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current">
+                  <path d="M50 5 C25.1 5 5 25.1 5 50 C5 74.9 25.1 95 50 95 C74.9 95 95 74.9 95 50 C95 25.1 74.9 5 50 5 Z M50 88 C29 88 12 71 12 50 C12 29 29 12 50 12 C71 12 88 29 88 50 C88 71 71 88 50 88 Z" />
+                  <path d="M42 35 H58 V42 H65 V58 H58 V65 H42 V58 H35 V42 H42 V35 Z" />
+                  <path d="M50 25 C52.8 25 55 27.2 55 30 C55 32.8 52.8 35 50 35 C47.2 35 45 32.8 45 30 C45 27.2 47.2 25 50 25 Z" />
+                  <path d="M50 40 C40 40 35 45 35 55 L50 75 L65 55 C65 45 60 40 50 40 Z" />
+                  <path d="M30 80 Q50 85 70 80 L72 78 Q50 83 28 78 Z" />
+                </svg>
               </div>
-              <span className="font-headline font-bold text-4xl tracking-tighter hidden sm:inline-block">
-                Health<span className="text-primary">Plus</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="font-headline font-black text-2xl md:text-3xl tracking-tighter leading-none">
+                  Health<span className="text-primary">Plus</span>
+                </span>
+                <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-slate-500 leading-none mt-1">
+                  Innovation Pvt. Ltd.
+                </span>
+              </div>
             </Link>
           </div>
 
@@ -113,10 +124,10 @@ export const Navbar = () => {
               <FileDown className="h-5 w-5 text-primary" /> Brochure
             </Button>
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative h-12 w-12">
-                <ShoppingCart className="h-6 w-6" />
+              <Button variant="ghost" size="icon" className="relative h-14 w-14 group">
+                <ShoppingCart className="h-8 w-8 text-slate-700 group-hover:text-primary transition-colors" />
                 {cartCount > 0 && (
-                  <Badge className="absolute -top-1 -right-1 h-6 w-6 flex items-center justify-center p-0 text-[11px] bg-accent text-accent-foreground border-none font-bold">
+                  <Badge className="absolute top-0 right-0 h-7 w-7 flex items-center justify-center p-0 text-[12px] bg-accent text-accent-foreground border-2 border-white font-black rounded-full shadow-md animate-in zoom-in">
                     {cartCount}
                   </Badge>
                 )}
