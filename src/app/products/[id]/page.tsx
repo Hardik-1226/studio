@@ -9,6 +9,9 @@ import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import { 
   ChevronLeft, 
   ShoppingCart, 
@@ -20,7 +23,10 @@ import {
   Beaker,
   AlertTriangle,
   Stethoscope,
-  ArrowRight
+  ArrowRight,
+  Star,
+  User,
+  MessageSquare
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
@@ -31,23 +37,25 @@ export default function ProductDetailsPage() {
   const { addToCart } = useCart();
   const { toast } = useToast();
   const [quantity, setQuantity] = useState(1);
+  const [reviewForm, setReviewForm] = useState({ name: '', rating: 5, comment: '' });
 
   const product = PRODUCTS.find(p => p.id === id);
   const [activeImage, setActiveImage] = useState(product?.imageUrl || '');
 
+  const mockReviews = [
+    { id: 1, name: "Dr. Ananya Sharma", rating: 5, date: "2 months ago", comment: "Excellent quality and very effective for patients. HPI delivery was prompt." },
+    { id: 2, name: "MediClinic Pharmacy", rating: 4, date: "3 weeks ago", comment: "The packaging is professional and the stability of the drug is reliable." },
+    { id: 3, name: "Rajesh V.", rating: 5, date: "1 month ago", comment: "The best Q10 supplement I've recommended so far. Patients report high vitality." }
+  ];
+
   const relatedProducts = useMemo(() => {
     if (!product) return [];
-    
-    // First, try to find products in the same category
     let matches = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id);
-    
-    // If we have fewer than 5, add products from other categories to fill up to 5
     if (matches.length < 5) {
       const others = PRODUCTS.filter(p => p.category !== product.category && p.id !== product.id);
       const shuffledOthers = [...others].sort(() => 0.5 - Math.random());
       matches = [...matches, ...shuffledOthers.slice(0, 5 - matches.length)];
     }
-    
     return matches.slice(0, 5);
   }, [product]);
 
@@ -66,6 +74,15 @@ export default function ProductDetailsPage() {
       title: "Added to order",
       description: `${quantity}x ${product.name} added to your basket.`
     });
+  };
+
+  const handleReviewSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Review Submitted",
+      description: "Thank you for your feedback! It will be visible after moderation."
+    });
+    setReviewForm({ name: '', rating: 5, comment: '' });
   };
 
   return (
@@ -111,7 +128,6 @@ export default function ProductDetailsPage() {
 
         {/* Right Column: Content */}
         <div className="space-y-6 py-2">
-          {/* Header & Pricing */}
           <div className="space-y-2">
             <Badge className="bg-primary/10 text-primary border-none uppercase text-[10px] font-bold tracking-widest px-3 py-1 rounded-full">
               {product.category}
@@ -159,15 +175,11 @@ export default function ProductDetailsPage() {
               >
                 <ShoppingCart className="h-5 w-5 mr-2" /> Add to Basket
               </Button>
-              <Button size="lg" variant="outline" className="flex-1 h-14 text-lg rounded-full border-primary/20 hover:bg-primary/5 text-primary font-bold">
-                Bulk Inquiry
-              </Button>
             </div>
           </div>
 
           {/* Detailed Information */}
           <div className="space-y-8">
-            {/* Composition */}
             {product.composition && (
               <div className="p-4 bg-primary/5 rounded-3xl border border-primary/10">
                 <h3 className="text-primary font-black text-sm uppercase tracking-widest mb-3 flex items-center gap-2">
@@ -183,7 +195,6 @@ export default function ProductDetailsPage() {
               </div>
             )}
 
-            {/* Description */}
             <div className="space-y-2">
               <h3 className="text-slate-800 font-bold text-lg flex items-center gap-2">
                 <Info className="h-5 w-5 text-primary" /> Description
@@ -191,7 +202,6 @@ export default function ProductDetailsPage() {
               <p className="text-slate-600 leading-relaxed text-sm">{product.description}</p>
             </div>
 
-            {/* Benefits */}
             {product.benefits && (
               <div className="space-y-2">
                 <h3 className="text-slate-800 font-bold text-lg flex items-center gap-2">
@@ -208,7 +218,6 @@ export default function ProductDetailsPage() {
               </div>
             )}
 
-            {/* Indications */}
             {product.indications && (
               <div className="space-y-2">
                 <h3 className="text-slate-800 font-bold text-lg flex items-center gap-2">
@@ -224,7 +233,6 @@ export default function ProductDetailsPage() {
               </div>
             )}
 
-            {/* Dosage */}
             {product.dosage && (
               <div className="space-y-2">
                 <h3 className="text-slate-800 font-bold text-lg flex items-center gap-2">
@@ -234,7 +242,6 @@ export default function ProductDetailsPage() {
               </div>
             )}
 
-            {/* Precautions */}
             {product.precautions && (
               <div className="p-4 bg-orange-50 rounded-3xl border border-orange-100">
                 <h3 className="text-orange-600 font-black text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
@@ -250,6 +257,95 @@ export default function ProductDetailsPage() {
           </div>
         </div>
       </div>
+
+      {/* Reviews Section */}
+      <section className="py-16 border-t border-slate-100">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="lg:col-span-1 space-y-6">
+            <div>
+              <h2 className="text-2xl font-black text-slate-800">Customer Reviews</h2>
+              <div className="flex items-center gap-2 mt-2">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map(i => <Star key={i} className="h-4 w-4 fill-primary text-primary" />)}
+                </div>
+                <span className="text-sm font-bold text-slate-600">4.9 out of 5</span>
+              </div>
+            </div>
+
+            <Card className="border-none bg-slate-50 rounded-[2rem]">
+              <CardContent className="p-6 space-y-4">
+                <h3 className="font-bold text-slate-800 flex items-center gap-2">
+                  <MessageSquare className="h-4 w-4 text-primary" /> Write a Review
+                </h3>
+                <form onSubmit={handleReviewSubmit} className="space-y-4">
+                  <div className="space-y-1">
+                    <Label htmlFor="review-name" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Name</Label>
+                    <Input 
+                      id="review-name" 
+                      value={reviewForm.name} 
+                      onChange={e => setReviewForm({...reviewForm, name: e.target.value})}
+                      className="bg-white rounded-xl border-none shadow-sm h-10" 
+                      placeholder="Your name"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <Label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Rating</Label>
+                    <div className="flex gap-1">
+                      {[1, 2, 3, 4, 5].map(i => (
+                        <Star 
+                          key={i} 
+                          className={cn(
+                            "h-6 w-6 cursor-pointer transition-colors", 
+                            reviewForm.rating >= i ? "fill-primary text-primary" : "text-slate-300"
+                          )} 
+                          onClick={() => setReviewForm({...reviewForm, rating: i})}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="review-comment" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Review</Label>
+                    <Textarea 
+                      id="review-comment" 
+                      value={reviewForm.comment}
+                      onChange={e => setReviewForm({...reviewForm, comment: e.target.value})}
+                      className="bg-white rounded-xl border-none shadow-sm" 
+                      placeholder="Share your experience..." 
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="w-full rounded-full bg-primary text-white font-bold h-10">
+                    Submit Review
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="lg:col-span-2 space-y-6">
+            {mockReviews.map(review => (
+              <div key={review.id} className="p-6 bg-white border border-slate-50 rounded-[2.5rem] shadow-sm flex gap-4">
+                <div className="h-10 w-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <User className="h-5 w-5 text-primary" />
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <h4 className="font-bold text-slate-800">{review.name}</h4>
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{review.date}</span>
+                  </div>
+                  <div className="flex mb-2">
+                    {[1, 2, 3, 4, 5].map(i => (
+                      <Star key={i} className={cn("h-3 w-3", i <= review.rating ? "fill-primary text-primary" : "text-slate-200")} />
+                    ))}
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed italic">"{review.comment}"</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Related Products Section */}
       {relatedProducts.length > 0 && (
