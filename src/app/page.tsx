@@ -207,7 +207,7 @@ export default function Home() {
                             <span className="text-primary font-black text-lg">₹{product.price.toFixed(2)}</span>
                             <span className="text-slate-400 line-through text-xs font-bold">₹{product.mrp.toFixed(2)}</span>
                           </div>
-                          <Button variant="outline" className="w-full rounded-full h-10 border-primary/20 text-primary font-bold text-xs group-hover:bg-primary group-hover:text-white transition-all">
+                          <Button variant="outline" className="w-full rounded-full h-10 border-2 border-primary text-primary font-bold text-xs group-hover:bg-primary group-hover:text-white transition-all">
                             View Details
                           </Button>
                         </div>
