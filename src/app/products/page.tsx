@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, Filter, ShoppingCart } from 'lucide-react';
+import { Search, ShoppingCart } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ProductsPage() {
@@ -89,7 +89,6 @@ export default function ProductsPage() {
                     alt={product.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-200"
-                    data-ai-hint="medicine product"
                   />
                   <Badge className="absolute top-3 left-3 bg-white/90 text-primary hover:bg-white">
                     {product.category}

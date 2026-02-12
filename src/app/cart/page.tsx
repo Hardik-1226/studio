@@ -5,10 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-import { RecommendationSection } from '@/components/RecommendationSection';
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity, cartTotal } = useCart();
@@ -92,8 +90,6 @@ export default function CartPage() {
               </div>
             ))}
           </div>
-
-          <RecommendationSection />
         </div>
 
         <div className="space-y-6">

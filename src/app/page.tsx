@@ -20,7 +20,6 @@ export default function Home() {
             fill
             className="object-cover opacity-20"
             priority
-            data-ai-hint="pharmacy shelf"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         </div>
@@ -121,7 +120,6 @@ export default function Home() {
                     alt={product.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    data-ai-hint="medical product"
                   />
                 </div>
                 <CardContent className="p-6 flex-grow flex flex-col">
