@@ -1,46 +1,28 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-pharma",
-      "description": "Professional pharmacy shelf with medicines",
-      "imageUrl": "https://images.unsplash.com/photo-1729949127879-2d6556e2aee8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwaGFybWFjeSUyMG1lZGljaW5lc3xlbnwwfHx8fDE3NzA5MDEyNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pharmacy medicines"
+      "id": "hero-1",
+      "description": "Modern pharmaceutical research laboratory",
+      "imageUrl": "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGxhYnxlbnwwfHx8fDE3NzA5MjIxNzh8MA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "pharmaceutical lab"
     },
     {
-      "id": "product-paracetamol",
-      "description": "Medicine box for paracetamol",
-      "imageUrl": "https://images.unsplash.com/photo-1609298319714-4032e1717e34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtZWRpY2luZSUyMHBpbGxzfGVufDB8fHx8MTc3MDkwMTI3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "medicine pills"
+      "id": "hero-2",
+      "description": "Healthcare professionals collaborating",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dad99a01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFsc3xlbnwwfHx8fDE3NzA5MjIxNzh8MA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "healthcare professionals"
     },
     {
-      "id": "product-vitaminc",
-      "description": "Vitamin C supplements",
-      "imageUrl": "https://images.unsplash.com/photo-1627467959081-97831c0d645f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx2aXRhbWlucyUyMHN1cHBsZW1lbnRzfGVufDB8fHx8MTc3MDkwMTI3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "vitamins supplements"
+      "id": "about-image",
+      "description": "Medicine manufacturing and quality control",
+      "imageUrl": "https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwaGFybWFjZXV0aWNhbCUyMG1hbnVmYWN0dXJpbmd8ZW58MHx8fHwxNzcwOTIyMTc4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pharmaceutical manufacturing"
     },
     {
-      "id": "product-firstaid",
-      "description": "First aid kit",
-      "imageUrl": "https://images.unsplash.com/photo-1622551546704-36926ae49878?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmaXJzdCUyMGFpZHxlbnwwfHx8fDE3NzA4OTU2MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "first aid"
-    },
-    {
-      "id": "product-thermometer",
-      "description": "Digital thermometer",
-      "imageUrl": "https://images.unsplash.com/photo-1584252331038-d4d09c9ebce3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGhlcm1vbWV0ZXIlMjBtZWRpY2FsfGVufDB8fHx8MTc3MDkwMTI3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "thermometer medical"
-    },
-    {
-      "id": "product-sanitizer",
-      "description": "Hand sanitizer bottle",
-      "imageUrl": "https://images.unsplash.com/photo-1608564348103-2b78891150cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoYW5kJTIwc2FuaXRpemVyfGVufDB8fHx8MTc3MDkwMTI3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "hand sanitizer"
-    },
-    {
-      "id": "product-mask",
-      "description": "Surgical face masks",
-      "imageUrl": "https://images.unsplash.com/photo-1584961958654-fea280e63da5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2FsJTIwbWFza3xlbnwwfHx8fDE3NzA5MDEyNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "medical mask"
+      "id": "partner-placeholder",
+      "description": "Corporate logo placeholder",
+      "imageUrl": "https://images.unsplash.com/photo-1759365400065-ab88a7b8e82f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc3MDgzODA2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "corporate logo"
     }
   ]
 }

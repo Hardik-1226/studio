@@ -12,50 +12,50 @@ export const PRODUCTS: Product[] = [
   {
     id: '1',
     name: 'Paracetamol 500mg',
-    category: 'Pain Relief',
-    description: 'Effective relief from fever and mild to moderate pain including headache, migraine, muscle ache, and toothache.',
+    category: 'Analgesics',
+    description: 'High-quality analgesic for effective pain management in institutional settings.',
     price: 4.99,
-    imageUrl: 'https://picsum.photos/seed/p1/400/400'
+    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2luZSUyMHBpbGxzfGVufDB8fHx8MTc3MDkyMjE3OHww&ixlib=rb-4.1.0&q=80&w=600'
   },
   {
     id: '2',
-    name: 'Vitamin C 1000mg',
-    category: 'Supplements',
-    description: 'Supports immune health and provides antioxidant protection. Great for daily wellness.',
-    price: 12.50,
-    imageUrl: 'https://picsum.photos/seed/p2/400/400'
+    name: 'Amoxicillin 250mg',
+    category: 'Antibiotics',
+    description: 'Reliable broad-spectrum antibiotic for bacterial infections.',
+    price: 15.50,
+    imageUrl: 'https://images.unsplash.com/photo-1576086213369-97a306dca664?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtZWRpY2luZSUyMGNhcHN1bGVzfGVufDB8fHx8MTc3MDkyMjE3OHww&ixlib=rb-4.1.0&q=80&w=600'
   },
   {
     id: '3',
-    name: 'First Aid Kit - Essential',
-    category: 'First Aid',
-    description: 'A comprehensive kit containing bandages, antiseptic wipes, scissors, and more for emergency care.',
-    price: 24.99,
-    imageUrl: 'https://picsum.photos/seed/p3/400/400'
+    name: 'Metformin 500mg',
+    category: 'Antidiabetics',
+    description: 'Essential management for Type 2 Diabetes with proven consistency.',
+    price: 10.99,
+    imageUrl: 'https://images.unsplash.com/photo-1626716493137-b67fe9501e76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2luZSUyMHRhYmxldHN8ZW58MHx8fHwxNzcwOTIyMTc4fDA&ixlib=rb-4.1.0&q=80&w=600'
   },
   {
     id: '4',
-    name: 'Digital Thermometer',
-    category: 'Medical Devices',
-    description: 'Fast and accurate temperature reading with a clear digital display and fever alert.',
-    price: 15.00,
-    imageUrl: 'https://picsum.photos/seed/p4/400/400'
+    name: 'Atorvastatin 10mg',
+    category: 'Cardiovascular',
+    description: 'Effective lipid-lowering medication for cardiovascular health.',
+    price: 18.00,
+    imageUrl: 'https://images.unsplash.com/photo-1631549916768-4119b295f926?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtZWRpY2F0aW9ufGVufDB8fHx8MTc3MDkyMjE3OHww&ixlib=rb-4.1.0&q=80&w=600'
   },
   {
     id: '5',
-    name: 'Hand Sanitizer 500ml',
-    category: 'Hygiene',
-    description: 'Kills 99.9% of germs without water. Contains 70% alcohol for effective sanitization.',
-    price: 8.75,
-    imageUrl: 'https://picsum.photos/seed/p5/400/400'
+    name: 'Omeprazole 20mg',
+    category: 'Gastrointestinal',
+    description: 'Proton pump inhibitor for acid reflux and gastrointestinal care.',
+    price: 12.75,
+    imageUrl: 'https://images.unsplash.com/photo-1603398938378-e54eab446ddd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpY2luZSUyMGJvdHRsZXxlbnwwfHx8fDE3NzA5MjIxNzh8MA&ixlib=rb-4.1.0&q=80&w=600'
   },
   {
     id: '6',
-    name: '3-Ply Surgical Masks (Pack of 50)',
-    category: 'Protective Gear',
-    description: 'High filtration capacity surgical masks with comfortable ear loops and adjustable nose bridge.',
-    price: 19.99,
-    imageUrl: 'https://picsum.photos/seed/p6/400/400'
+    name: 'Cetirizine 10mg',
+    category: 'Antihistamines',
+    description: 'Second-generation antihistamine for seasonal allergy relief.',
+    price: 6.50,
+    imageUrl: 'https://images.unsplash.com/photo-1550572017-ed200f545dec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtZWRpY2luZXxlbnwwfHx8fDE3NzA5MjIxNzh8MA&ixlib=rb-4.1.0&q=80&w=600'
   }
 ];
 
