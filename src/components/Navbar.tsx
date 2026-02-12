@@ -15,25 +15,25 @@ export const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full flex flex-col">
       {/* Top Contact Bar */}
-      <div className="w-full bg-primary text-primary-foreground py-2 px-4 hidden sm:block">
+      <div className="w-full bg-primary text-primary-foreground py-2.5 px-4 hidden sm:block">
         <div className="container mx-auto flex justify-between items-center text-xs font-medium">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <Phone className="h-3 w-3" /> +91 (123) 456-7890
+              <Phone className="h-4 w-4" /> +91 (123) 456-7890
             </span>
             <span className="flex items-center gap-2">
-              <Mail className="h-3 w-3" /> info@hpi.co.in
+              <Mail className="h-4 w-4" /> info@hpi.co.in
             </span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             <Link href="https://facebook.com" target="_blank" className="hover:opacity-80 transition-opacity">
-              <Facebook className="h-3.5 w-3.5" />
+              <Facebook className="h-5 w-5" />
             </Link>
             <Link href="https://twitter.com" target="_blank" className="hover:opacity-80 transition-opacity">
-              <Twitter className="h-3.5 w-3.5" />
+              <Twitter className="h-5 w-5" />
             </Link>
             <Link href="https://instagram.com" target="_blank" className="hover:opacity-80 transition-opacity">
-              <Instagram className="h-3.5 w-3.5" />
+              <Instagram className="h-5 w-5" />
             </Link>
           </div>
         </div>
@@ -41,12 +41,12 @@ export const Navbar = () => {
 
       {/* Main Navbar */}
       <div className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 flex h-20 items-center justify-between gap-4">
+        <div className="container mx-auto px-4 flex h-24 items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-5 w-5" />
+                  <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-[280px]">
@@ -62,16 +62,16 @@ export const Navbar = () => {
               </SheetContent>
             </Sheet>
             <Link href="/" className="flex items-center gap-3">
-              <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center shadow-sm">
-                <span className="text-white font-bold text-2xl">H</span>
+              <div className="h-14 w-14 rounded-full bg-primary flex items-center justify-center shadow-md">
+                <span className="text-white font-bold text-3xl">H</span>
               </div>
-              <span className="font-headline font-bold text-3xl tracking-tighter hidden sm:inline-block">
+              <span className="font-headline font-bold text-4xl tracking-tighter hidden sm:inline-block">
                 Health<span className="text-primary">Plus</span>
               </span>
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wide">
+          <nav className="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest">
             <Link href="/" className="transition-colors hover:text-primary">Home</Link>
             <Link href="/products" className="transition-colors hover:text-primary">Products</Link>
             <Link href="/about" className="transition-colors hover:text-primary">About Us</Link>
@@ -79,22 +79,19 @@ export const Navbar = () => {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-4">
-            <Button variant="outline" className="hidden lg:flex gap-2 rounded-full border-primary/30 hover:bg-primary/10">
-              <FileDown className="h-4 w-4 text-primary" /> Brochure
+            <Button variant="outline" className="hidden lg:flex gap-2 rounded-full border-primary/40 hover:bg-primary/10 h-12 px-6 font-bold">
+              <FileDown className="h-5 w-5 text-primary" /> Brochure
             </Button>
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative">
-                <ShoppingCart className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="relative h-12 w-12">
+                <ShoppingCart className="h-6 w-6" />
                 {cartCount > 0 && (
-                  <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-[10px] bg-accent text-accent-foreground border-none">
+                  <Badge className="absolute -top-1 -right-1 h-6 w-6 flex items-center justify-center p-0 text-[11px] bg-accent text-accent-foreground border-none font-bold">
                     {cartCount}
                   </Badge>
                 )}
               </Button>
             </Link>
-            <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
-              <User className="h-5 w-5" />
-            </Button>
           </div>
         </div>
       </div>
