@@ -37,7 +37,6 @@ export default function Home() {
       <section className="relative hero-gradient min-h-[70vh] flex flex-col items-center justify-center text-center px-4 pt-20 pb-24">
         {/* Decorative Hanging Icons */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
-          {/* Hanging Elements */}
           <div className="absolute top-0 left-[10%] animate-bounce duration-[3000ms]"><div className="h-16 w-[1px] bg-primary mx-auto"></div><Heart className="text-primary h-5 w-5" /></div>
           <div className="absolute top-0 left-[25%] animate-bounce duration-[4000ms]"><div className="h-24 w-[1px] bg-accent mx-auto"></div><Star className="text-accent h-5 w-5" /></div>
           <div className="absolute top-0 left-[40%] animate-bounce duration-[3500ms]"><div className="h-20 w-[1px] bg-primary mx-auto"></div><Heart className="text-primary h-4 w-4" /></div>
@@ -45,7 +44,6 @@ export default function Home() {
           <div className="absolute top-0 left-[75%] animate-bounce duration-[3200ms]"><div className="h-20 w-[1px] bg-primary mx-auto"></div><Pill className="text-primary h-5 w-5" /></div>
           <div className="absolute top-0 left-[90%] animate-bounce duration-[3800ms]"><div className="h-14 w-[1px] bg-accent mx-auto"></div><Heart className="text-accent h-4 w-4" /></div>
 
-          {/* Floating Elements */}
           <div className="absolute top-10 left-10 animate-pulse"><Activity className="text-primary h-6 w-6" /></div>
           <div className="absolute top-40 left-[15%] animate-pulse duration-[3000ms]"><Star className="text-accent h-4 w-4" /></div>
           <div className="absolute bottom-20 left-[5%] animate-pulse duration-[4000ms]"><Heart className="text-primary h-8 w-8" /></div>
@@ -95,7 +93,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Wave Shape at bottom */}
         <div className="wave-bottom">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="shape-fill"></path>
@@ -233,8 +230,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {partners.map((partner, index) => (
-              <div key={index} className="flex flex-col items-center p-6 bg-white rounded-[2rem] shadow-sm hover:shadow-lg hover:translate-y-[-3px] transition-all duration-300 text-center space-y-3 group border border-slate-100">
-                <div className="relative h-12 w-20 opacity-40 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500">
+              <div key={index} className="flex flex-col items-center p-6 bg-white rounded-[2rem] shadow-sm hover:shadow-xl hover:translate-y-[-5px] transition-all duration-300 text-center space-y-3 group border border-slate-100">
+                <div className="relative h-12 w-20 opacity-100 transition-transform duration-500 group-hover:scale-125">
                   <Image
                     src={`https://picsum.photos/seed/partner${index}/300/150`}
                     alt={partner.name}
@@ -243,7 +240,7 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[12px] text-slate-800 leading-tight">{partner.name}</h4>
+                  <h4 className="font-bold text-[12px] text-slate-800 leading-tight group-hover:text-primary transition-colors">{partner.name}</h4>
                   <p className="text-[9px] text-primary font-black uppercase tracking-widest mt-0.5">{partner.text}</p>
                 </div>
               </div>

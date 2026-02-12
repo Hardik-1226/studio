@@ -72,7 +72,7 @@ export const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-[#3ab8c5] font-bold text-xl text-center md:text-left">Get in touch</h3>
             
-            <div className="rounded-xl overflow-hidden border-2 border-white shadow-sm relative h-40 w-full max-w-sm mx-auto md:mx-0">
+            <div className="rounded-xl overflow-hidden border-2 border-white shadow-xl relative h-40 w-full max-w-sm mx-auto md:mx-0 group">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.584344445558!2d77.27367857549688!3d28.52180867572703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3e970228e3d%3A0xc3437f90356c9d2d!2sOkhla%20Phase%20II%2C%20Okhla%20Industrial%20Estate%2C%20New%20Delhi%2C%20Delhi%20110020!5e0!3m2!1sen!2sin!4v1710922178999!5m2!1sen!2sin" 
                 width="100%" 
@@ -81,7 +81,7 @@ export const Footer = () => {
                 allowFullScreen={true} 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                className="opacity-100 transition-all duration-700 group-hover:scale-105"
               ></iframe>
             </div>
 
