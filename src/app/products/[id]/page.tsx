@@ -2,7 +2,6 @@
 
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState, useMemo } from 'react';
 import { PRODUCTS } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
@@ -12,6 +11,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import Link from 'next/link';
 import { 
   ChevronLeft, 
   ShoppingCart, 
@@ -53,8 +53,8 @@ export default function ProductDetailsPage() {
     let matches = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id);
     if (matches.length < 5) {
       const others = PRODUCTS.filter(p => p.category !== product.category && p.id !== product.id);
-      const shuffledOthers = [...others].sort(() => 0.5 - Math.random());
-      matches = [...matches, ...shuffledOthers.slice(0, 5 - matches.length)];
+      // Use deterministic slice instead of random sort to avoid hydration mismatches
+      matches = [...matches, ...others.slice(0, 5 - matches.length)];
     }
     return matches.slice(0, 5);
   }, [product]);
@@ -96,7 +96,6 @@ export default function ProductDetailsPage() {
       </Button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-        {/* Left Column: Image Gallery */}
         <div className="space-y-4 max-w-sm mx-auto w-full">
           <div className="relative h-64 w-full overflow-hidden rounded-[2rem] bg-white border-4 border-slate-50 shadow-lg">
             <Image
@@ -126,7 +125,6 @@ export default function ProductDetailsPage() {
           )}
         </div>
 
-        {/* Right Column: Content */}
         <div className="space-y-6 py-2">
           <div className="space-y-2">
             <Badge className="bg-primary/10 text-primary border-none uppercase text-[10px] font-bold tracking-widest px-3 py-1 rounded-full">
@@ -142,7 +140,6 @@ export default function ProductDetailsPage() {
             </div>
           </div>
 
-          {/* Primary Action (Add to Cart) */}
           <div className="space-y-4 py-4 border-y border-slate-100">
             <div className="flex items-center gap-4">
               <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Quantity</span>
@@ -178,7 +175,6 @@ export default function ProductDetailsPage() {
             </div>
           </div>
 
-          {/* Detailed Information */}
           <div className="space-y-8">
             {product.composition && (
               <div className="p-4 bg-primary/5 rounded-3xl border border-primary/10">
@@ -258,7 +254,6 @@ export default function ProductDetailsPage() {
         </div>
       </div>
 
-      {/* Reviews Section */}
       <section className="py-16 border-t border-slate-100">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-1 space-y-6">
@@ -347,7 +342,6 @@ export default function ProductDetailsPage() {
         </div>
       </section>
 
-      {/* Related Products Section */}
       {relatedProducts.length > 0 && (
         <section className="pt-16 border-t border-slate-100">
           <div className="flex justify-between items-end mb-8">
