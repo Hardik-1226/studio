@@ -18,14 +18,10 @@ export const Footer = () => {
             <div className="flex flex-col items-center md:items-start gap-2">
               <div className="h-20 w-20 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current">
-                  {/* Outer Ring */}
                   <path d="M50 5 C25.1 5 5 25.1 5 50 C5 74.9 25.1 95 50 95 C74.9 95 95 74.9 95 50 C95 25.1 74.9 5 50 5 Z M50 91 C27.4 91 9 72.6 9 50 C9 27.4 27.4 9 50 9 C72.6 9 91 27.4 91 50 C91 72.6 72.6 91 50 91 Z" />
-                  {/* Cross */}
                   <path d="M38 44 H44 V38 H56 V44 H62 V56 H56 V62 H44 V56 H38 V44 Z" />
-                  {/* Human Figure */}
                   <circle cx="50" cy="32" r="6" />
                   <path d="M50 40 C42 40 36 48 36 60 L50 82 L64 60 C64 48 58 40 50 40 Z" />
-                  {/* Hand Support at bottom */}
                   <path d="M28 82 Q50 88 72 82 L74 80 Q50 85 26 80 Z" />
                 </svg>
               </div>
@@ -50,6 +46,7 @@ export const Footer = () => {
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/products" className="hover:text-primary transition-colors">Catalog</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
             </ul>
 
             <div className="space-y-3">
@@ -92,11 +89,11 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-[#3ab8c5]" />
-                <span>info@hpi.co.in</span>
+                <span>innovateplushealth@gmail.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-[#3ab8c5] shrink-0 mt-0.5" />
-                <span className="leading-tight">D-4/1 1st floor okhla phase 2 Delhi-110020</span>
+                <span className="leading-tight">D-4/1 1st floor okhla phase industrial area phase 2 Delhi-110020</span>
               </li>
             </ul>
           </div>
@@ -107,7 +104,7 @@ export const Footer = () => {
       <div className="bg-white py-4 border-t">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="text-[#8a6a8a] font-bold text-[10px] text-center">
-            Copyright © 2026 hpi.co.in
+            Copyright © 2026 hpi.co.in | <Link href="/terms" className="hover:text-primary">T&amp;C</Link>
           </p>
           <Button 
             variant="ghost" 
