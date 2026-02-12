@@ -7,8 +7,8 @@ import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'MediShop | Modern Pharmaceutical E-commerce',
-  description: 'Rebuilding pharmaceutical e-commerce with modern tech stack. Trusted medicines delivered fast.',
+  title: 'Health Plus Innovation | Safe, Reliable, Innovative Medicines',
+  description: 'Improving healthcare across India through quality pharmaceutical products and professional support for hospitals and clinics.',
 };
 
 export default function RootLayout({
