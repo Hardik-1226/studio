@@ -94,11 +94,15 @@ export const Navbar = () => {
             <Link href="/" className="flex items-center gap-3">
               <div className="relative h-16 w-16 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current">
-                  <path d="M50 5 C25.1 5 5 25.1 5 50 C5 74.9 25.1 95 50 95 C74.9 95 95 74.9 95 50 C95 25.1 74.9 5 50 5 Z M50 88 C29 88 12 71 12 50 C12 29 29 12 50 12 C71 12 88 29 88 50 C88 71 71 88 50 88 Z" />
-                  <path d="M42 35 H58 V42 H65 V58 H58 V65 H42 V58 H35 V42 H42 V35 Z" />
-                  <path d="M50 25 C52.8 25 55 27.2 55 30 C55 32.8 52.8 35 50 35 C47.2 35 45 32.8 45 30 C45 27.2 47.2 25 50 25 Z" />
-                  <path d="M50 40 C40 40 35 45 35 55 L50 75 L65 55 C65 45 60 40 50 40 Z" />
-                  <path d="M30 80 Q50 85 70 80 L72 78 Q50 83 28 78 Z" />
+                  {/* Outer Ring */}
+                  <path d="M50 5 C25.1 5 5 25.1 5 50 C5 74.9 25.1 95 50 95 C74.9 95 95 74.9 95 50 C95 25.1 74.9 5 50 5 Z M50 91 C27.4 91 9 72.6 9 50 C9 27.4 27.4 9 50 9 C72.6 9 91 27.4 91 50 C91 72.6 72.6 91 50 91 Z" />
+                  {/* Cross */}
+                  <path d="M38 44 H44 V38 H56 V44 H62 V56 H56 V62 H44 V56 H38 V44 Z" />
+                  {/* Human Figure */}
+                  <circle cx="50" cy="32" r="6" />
+                  <path d="M50 40 C42 40 36 48 36 60 L50 82 L64 60 C64 48 58 40 50 40 Z" />
+                  {/* Hand Support at bottom */}
+                  <path d="M28 82 Q50 88 72 82 L74 80 Q50 85 26 80 Z" />
                 </svg>
               </div>
               <div className="flex flex-col">
@@ -124,10 +128,10 @@ export const Navbar = () => {
               <FileDown className="h-5 w-5 text-primary" /> Brochure
             </Button>
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative h-14 w-14 group">
-                <ShoppingCart className="h-8 w-8 text-slate-700 group-hover:text-primary transition-colors" />
+              <Button variant="ghost" size="icon" className="relative h-16 w-16 group">
+                <ShoppingCart className="h-9 w-9 text-slate-700 group-hover:text-primary transition-colors" />
                 {cartCount > 0 && (
-                  <Badge className="absolute top-0 right-0 h-7 w-7 flex items-center justify-center p-0 text-[12px] bg-accent text-accent-foreground border-2 border-white font-black rounded-full shadow-md animate-in zoom-in">
+                  <Badge className="absolute top-0 right-0 h-8 w-8 flex items-center justify-center p-0 text-[14px] bg-accent text-accent-foreground border-2 border-white font-black rounded-full shadow-md animate-in zoom-in">
                     {cartCount}
                   </Badge>
                 )}
