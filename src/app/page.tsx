@@ -150,7 +150,7 @@ export default function Home() {
               </div>
               <h2 className="text-2xl font-bold text-slate-800 mb-2">Our Vision</h2>
               <p className="text-slate-600 text-sm leading-relaxed">
-                To become the most trusted and innovative pharmaceutical partner in India, ensuring accessible healthcare solutions for every patient through excellence in quality and service.
+                Our vision is to become a recognized and respected leader in the pharmaceutical marketing industry, known for our dedication to quality, innovation, and patient-centric solutions. What makes Health Plus Innovation different is our focus on trust, quality, and consistency. We believe in building long-term relationships with healthcare providers by offering not only good products but also strong support.
               </p>
             </Card>
             <Card className="p-10 border-none shadow-lg bg-white rounded-[2.5rem] hover:translate-y-[-5px] transition-transform duration-300">
@@ -159,7 +159,7 @@ export default function Home() {
               </div>
               <h2 className="text-2xl font-bold text-slate-800 mb-2">Our Mission</h2>
               <p className="text-slate-600 text-sm leading-relaxed">
-                To build long-term relationships with healthcare providers by offering high-quality products, consistent support, and innovative solutions that help patients recover safer and faster.
+                At Health Plus Innovation (HPI), our mission is to deliver high-quality, effective, and affordable pharmaceutical products to healthcare professionals and institutions through ethical marketing and reliable distribution. We aim to bridge the gap between pharmaceutical manufacturers and hospitals by ensuring that trusted medicines reach the patients who need them most.
               </p>
             </Card>
           </div>
