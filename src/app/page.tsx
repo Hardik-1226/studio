@@ -9,7 +9,6 @@ import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity } from 'lu
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
-  const heroImage1 = PlaceHolderImages.find(img => img.id === 'hero-1');
   const aboutImage = PlaceHolderImages.find(img => img.id === 'about-image');
 
   const partners = [
@@ -40,13 +39,13 @@ export default function Home() {
 
         <div className="container relative z-10 mx-auto max-w-5xl">
           <div className="flex flex-col lg:flex-row items-center gap-8 mb-8">
-            {/* Left Image Placeholder (Doctors) */}
-            <div className="hidden lg:block relative w-1/4 h-[300px]">
+            {/* Hero Carousel Concept with static representations for now as per layout req */}
+            <div className="hidden lg:block relative w-1/4 h-[250px]">
                <Image 
                 src="https://picsum.photos/seed/doc1/400/600" 
                 alt="Healthcare Professionals" 
-                width={300} 
-                height={450} 
+                width={250} 
+                height={375} 
                 className="object-contain"
               />
             </div>
@@ -71,11 +70,11 @@ export default function Home() {
 
             {/* Right Images (Bubbles/Circles) */}
             <div className="hidden lg:flex flex-col gap-4 w-1/4 items-center">
-              <div className="h-32 w-32 rounded-full border-4 border-white shadow-md overflow-hidden">
-                <Image src="https://picsum.photos/seed/lab1/300/300" alt="Lab" width={200} height={200} className="object-cover" />
+              <div className="h-28 w-28 rounded-full border-4 border-white shadow-md overflow-hidden">
+                <Image src="https://picsum.photos/seed/lab1/300/300" alt="Lab" width={150} height={150} className="object-cover" />
               </div>
-              <div className="h-36 w-36 rounded-full border-4 border-white shadow-md overflow-hidden translate-x-6">
-                <Image src="https://picsum.photos/seed/lab2/300/300" alt="Research" width={200} height={200} className="object-cover" />
+              <div className="h-32 w-32 rounded-full border-4 border-white shadow-md overflow-hidden translate-x-6">
+                <Image src="https://picsum.photos/seed/lab2/300/300" alt="Research" width={180} height={180} className="object-cover" />
               </div>
             </div>
           </div>
@@ -114,7 +113,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="relative h-[350px] rounded-[3rem] overflow-hidden shadow-xl border-4 border-slate-50 mx-auto w-full max-w-lg">
+            <div className="relative h-[250px] rounded-[3rem] overflow-hidden shadow-xl border-4 border-slate-50 mx-auto w-full max-w-sm">
               <Image
                 src={aboutImage?.imageUrl || ''}
                 alt="HPI Quality Control"
@@ -174,7 +173,7 @@ export default function Home() {
                   <Link href={`/products/${product.id}`}>
                     <Card className="hover:shadow-xl transition-all duration-500 h-full border-none shadow-md rounded-[2rem] overflow-hidden group">
                       <CardContent className="p-0">
-                        <div className="relative h-48 w-full overflow-hidden">
+                        <div className="relative h-32 w-full overflow-hidden">
                           <Image
                             src={product.imageUrl}
                             alt={product.name}
@@ -188,8 +187,11 @@ export default function Home() {
                           </div>
                         </div>
                         <div className="p-6">
-                          <h3 className="text-xl font-bold mb-2 text-slate-800 group-hover:text-primary transition-colors">{product.name}</h3>
-                          <p className="text-slate-500 text-sm mb-4 line-clamp-1">{product.description}</p>
+                          <h3 className="text-xl font-bold mb-1 text-slate-800 group-hover:text-primary transition-colors">{product.name}</h3>
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-primary font-black text-lg">₹{product.price.toFixed(2)}</span>
+                            <span className="text-slate-400 line-through text-xs font-bold">₹{product.mrp.toFixed(2)}</span>
+                          </div>
                           <Button variant="outline" className="w-full rounded-full h-10 border-primary/20 text-primary font-bold text-xs group-hover:bg-primary group-hover:text-white transition-all">
                             View Details
                           </Button>
@@ -217,7 +219,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {partners.map((partner, index) => (
               <div key={index} className="flex flex-col items-center p-6 bg-white rounded-[2rem] shadow-sm hover:shadow-lg hover:translate-y-[-3px] transition-all duration-300 text-center space-y-3 group border border-slate-100">
-                <div className="relative h-16 w-24 opacity-40 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500">
+                <div className="relative h-12 w-20 opacity-40 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500">
                   <Image
                     src={`https://picsum.photos/seed/partner${index}/300/150`}
                     alt={partner.name}

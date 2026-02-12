@@ -3,29 +3,26 @@
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PRODUCTS, CATEGORIES } from '@/lib/products';
+import { PRODUCTS } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Search, ShoppingCart, ArrowRight, Zap } from 'lucide-react';
+import { Search, ShoppingCart, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ProductsPage() {
   const [search, setSearch] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { addToCart } = useCart();
   const { toast } = useToast();
 
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter(p => {
-      const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
-      const matchesCategory = !selectedCategory || p.category === selectedCategory;
-      return matchesSearch && matchesCategory;
+      return p.name.toLowerCase().includes(search.toLowerCase());
     });
-  }, [search, selectedCategory]);
+  }, [search]);
 
   const handleAddToCart = (e: React.MouseEvent, product: any) => {
     e.preventDefault();
@@ -63,7 +60,7 @@ export default function ProductsPage() {
                 <Link href={`/products/${product.id}`}>
                   <Card className="hover:shadow-lg transition-all duration-500 h-full border-none shadow-md rounded-[2rem] overflow-hidden group bg-white">
                     <CardContent className="p-0">
-                      <div className="relative h-36 w-full overflow-hidden">
+                      <div className="relative h-32 w-full overflow-hidden">
                         <Image
                           src={product.imageUrl}
                           alt={product.name}
@@ -73,7 +70,10 @@ export default function ProductsPage() {
                       </div>
                       <div className="p-4 text-center">
                         <h3 className="text-md font-bold mb-1 text-slate-800 line-clamp-1">{product.name}</h3>
-                        <p className="text-primary font-black text-sm">₹{product.price.toFixed(2)}</p>
+                        <div className="flex items-center justify-center gap-2">
+                          <p className="text-primary font-black text-sm">₹{product.price.toFixed(2)}</p>
+                          <p className="text-slate-400 line-through text-[10px] font-bold">₹{product.mrp.toFixed(2)}</p>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
@@ -98,26 +98,6 @@ export default function ProductsPage() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        
-        <div className="flex flex-wrap gap-2">
-          <Button 
-            variant={selectedCategory === null ? 'default' : 'outline'} 
-            className="rounded-full px-6 h-10 font-bold shadow-sm text-xs"
-            onClick={() => setSelectedCategory(null)}
-          >
-            All Areas
-          </Button>
-          {CATEGORIES.map(category => (
-            <Button 
-              key={category} 
-              variant={selectedCategory === category ? 'default' : 'outline'}
-              className="rounded-full px-6 h-10 font-bold shadow-sm text-xs"
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
       </div>
 
       {filteredProducts.length > 0 ? (
@@ -125,7 +105,7 @@ export default function ProductsPage() {
           {filteredProducts.map(product => (
             <Link key={product.id} href={`/products/${product.id}`}>
               <Card className="group flex flex-col h-full border-none shadow-md rounded-[2.5rem] overflow-hidden hover:shadow-xl transition-all duration-500 bg-white">
-                <div className="relative h-48 overflow-hidden bg-slate-50">
+                <div className="relative h-40 overflow-hidden bg-slate-50">
                   <Image
                     src={product.imageUrl}
                     alt={product.name}
@@ -137,6 +117,13 @@ export default function ProductsPage() {
                       {product.category}
                     </Badge>
                   </div>
+                  {product.mrp > product.price && (
+                    <div className="absolute top-3 right-3">
+                      <Badge className="bg-accent text-accent-foreground border-none font-black px-2 py-0.5 rounded-full shadow-sm text-[8px] uppercase tracking-widest">
+                        Save {Math.round(((product.mrp - product.price) / product.mrp) * 100)}%
+                      </Badge>
+                    </div>
+                  )}
                 </div>
                 <CardContent className="p-6 flex flex-col flex-grow">
                   <h3 className="font-bold text-lg mb-1 line-clamp-1 text-slate-800 group-hover:text-primary transition-colors">{product.name}</h3>
@@ -144,9 +131,14 @@ export default function ProductsPage() {
                     {product.description}
                   </p>
                   <div className="flex items-center justify-between mt-auto">
-                    <span className="text-xl font-black text-slate-800">
-                      ₹{product.price.toFixed(2)}
-                    </span>
+                    <div className="flex flex-col">
+                      <span className="text-xl font-black text-slate-800">
+                        ₹{product.price.toFixed(2)}
+                      </span>
+                      <span className="text-xs text-slate-400 line-through font-bold">
+                        ₹{product.mrp.toFixed(2)}
+                      </span>
+                    </div>
                     <Button 
                       size="icon" 
                       className="bg-primary text-white hover:bg-primary/90 rounded-xl h-10 w-10 shadow-md"
@@ -163,8 +155,8 @@ export default function ProductsPage() {
       ) : (
         <div className="text-center py-16 bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-100">
           <p className="text-xl text-slate-400 font-bold">No products found.</p>
-          <Button variant="link" className="text-primary font-bold mt-1 text-md" onClick={() => { setSearch(''); setSelectedCategory(null); }}>
-            Reset Filters
+          <Button variant="link" className="text-primary font-bold mt-1 text-md" onClick={() => { setSearch(''); }}>
+            Clear Search
           </Button>
         </div>
       )}

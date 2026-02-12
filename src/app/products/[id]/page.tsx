@@ -50,7 +50,7 @@ export default function ProductDetailsPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="space-y-4 max-w-sm mx-auto w-full">
-          <div className="relative h-80 w-full overflow-hidden rounded-[2rem] bg-white border-4 border-slate-50 shadow-lg">
+          <div className="relative h-64 w-full overflow-hidden rounded-[2rem] bg-white border-4 border-slate-50 shadow-lg">
             <Image
               src={activeImage}
               alt={product.name}
@@ -66,7 +66,7 @@ export default function ProductDetailsPage() {
                 <div 
                   key={idx}
                   className={cn(
-                    "relative h-20 w-full rounded-xl overflow-hidden cursor-pointer border-2 transition-all",
+                    "relative h-16 w-full rounded-xl overflow-hidden cursor-pointer border-2 transition-all",
                     activeImage === img ? "border-primary shadow-md" : "border-transparent hover:border-primary/30"
                   )}
                   onClick={() => setActiveImage(img)}
@@ -84,7 +84,13 @@ export default function ProductDetailsPage() {
               {product.category}
             </Badge>
             <h1 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight tracking-tight">{product.name}</h1>
-            <p className="text-2xl font-black text-primary">₹{product.price.toFixed(2)}</p>
+            <div className="flex items-baseline gap-3">
+              <p className="text-2xl font-black text-primary">₹{product.price.toFixed(2)}</p>
+              <p className="text-lg text-slate-400 line-through font-bold">₹{product.mrp.toFixed(2)}</p>
+              <Badge className="bg-accent text-accent-foreground border-none font-black px-2 py-0.5 rounded-full shadow-sm text-[10px] uppercase tracking-widest ml-2">
+                Save {Math.round(((product.mrp - product.price) / product.mrp) * 100)}%
+              </Badge>
+            </div>
           </div>
 
           <div className="text-slate-600">
