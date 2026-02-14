@@ -147,7 +147,7 @@ export default function Home() {
                 src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920"
                 alt="Doctor Background"
                 fill
-                className="object-cover object-left lg:translate-x-[-15%] lg:scale-110 transition-transform duration-700"
+                className="object-cover object-left lg:translate-x-[-35%] lg:scale-110 transition-transform duration-700"
               />
             </div>
 
@@ -177,7 +177,7 @@ export default function Home() {
                 <div className="pt-8 md:pt-10 relative z-[60]">
                   <Button asChild size="lg" className="rounded-full px-10 h-12 md:h-14 text-xs md:text-md bg-[#2d5a63] text-white hover:bg-[#2d5a63]/90 shadow-xl font-bold uppercase tracking-widest border-2 border-white/20 cursor-pointer">
                     <Link href="/products">
-                      Request Catalog
+                      Explore Our Products
                     </Link>
                   </Button>
                 </div>
@@ -234,7 +234,7 @@ export default function Home() {
       {/* Hospital Network */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4 text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-6 uppercase tracking-tight">Institutional Network</h2>
+          <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-6 uppercase tracking-tight">Our Trusted Partner</h2>
           <p className="text-slate-500 text-[10px] md:text-sm font-black uppercase tracking-[0.3em] max-w-2xl mx-auto">Supporting India's prestigious healthcare centers.</p>
         </div>
         
