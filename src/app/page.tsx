@@ -1,11 +1,28 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity, Star } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
+  const [currentBg, setCurrentBg] = useState(0);
+
+  const backgrounds = [
+    "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=1920",
+    "https://images.unsplash.com/photo-1576091160550-2173dad99a01?auto=format&fit=crop&q=80&w=1920",
+    "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=1920"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [backgrounds.length]);
+
   const partners = [
     { name: "Max Gurgaon", text: "Hospital Partner" },
     { name: "Max BLK", text: "Hospital Partner" },
@@ -28,11 +45,33 @@ export default function Home() {
 
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
-      {/* Visual Themed Hero Section */}
-      <section className="relative bg-[#f0f9fa] min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pt-16 pb-20 overflow-hidden">
+      {/* Visual Themed Hero Section with Slideshow Background */}
+      <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pt-16 pb-20 overflow-hidden">
+        
+        {/* Background Slideshow Overlay */}
+        <div className="absolute inset-0 z-0">
+          {backgrounds.map((bg, index) => (
+            <div
+              key={bg}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentBg ? 'opacity-15' : 'opacity-0'
+              }`}
+            >
+              <Image 
+                src={bg}
+                alt="Healthcare Background"
+                fill
+                className="object-cover"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+          {/* Subtle Color Overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-[#f0f9fa]/80" />
+        </div>
         
         {/* Hanging Icons Animation Layer */}
-        <div className="absolute top-0 inset-x-0 h-full pointer-events-none z-0 hidden md:flex justify-around opacity-30">
+        <div className="absolute top-0 inset-x-0 h-full pointer-events-none z-10 hidden md:flex justify-around opacity-30">
           {[...Array(12)].map((_, i) => (
             <div 
               key={i} 
@@ -61,11 +100,10 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
-          {/* Layout Wrapper for Left Image, Center Text, Right Circles */}
+        <div className="container relative z-20 mx-auto px-4 flex flex-col items-center">
           <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8 lg:gap-0">
             
-            {/* Left Image - Rectangular Wellness Illustration */}
+            {/* Left Image */}
             <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl animate-in slide-in-from-left duration-1000">
               <Image 
                 src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
@@ -125,7 +163,7 @@ export default function Home() {
         </div>
 
         {/* Bottom Wave Element */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-20">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-32 md:h-48 text-white fill-current">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
           </svg>
