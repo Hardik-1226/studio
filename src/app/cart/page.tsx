@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
-import { Trash2, Plus, Minus, ArrowRight, ShoppingBag, ClipboardList, Phone, Mail, ChevronLeft, Building2 } from 'lucide-react';
+import { Trash2, Plus, Minus, ShoppingBag, ClipboardList, Phone, Mail, ChevronLeft } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -129,43 +129,38 @@ export default function CartPage() {
         <div className="space-y-6">
           <Card className="sticky top-32 border shadow-2xl rounded-[3rem] overflow-hidden bg-white">
             <CardHeader className="bg-slate-900 p-8">
-              <CardTitle className="text-xl font-black text-white uppercase tracking-tight">Support Information</CardTitle>
+              <CardTitle className="text-xl font-black text-white uppercase tracking-tight">Inquiry Information</CardTitle>
             </CardHeader>
             <CardContent className="p-8 space-y-8">
               <div className="space-y-6">
-                <p className="text-xs font-medium text-slate-500 leading-relaxed italic">
-                  Add items to your basket and proceed to submit an inquiry. Our team will contact you with institutional pricing and supply details.
+                <p className="text-sm font-medium text-slate-600 leading-relaxed">
+                  To request institutional pricing and technical details for the selected items, please contact our procurement team directly.
                 </p>
                 
                 <Separator className="opacity-10" />
 
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-2xl border border-primary/10">
-                    <Phone className="h-5 w-5 text-primary" />
+                  <div className="flex items-center gap-4 p-5 bg-primary/5 rounded-2xl border border-primary/10">
+                    <Phone className="h-6 w-6 text-primary" />
                     <div>
                       <p className="text-[9px] font-black text-primary uppercase tracking-widest">Immediate Support</p>
-                      <p className="text-sm font-black text-slate-800">+91 9266903156</p>
+                      <p className="text-md font-black text-slate-800">+91 9266903156</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-2xl border border-primary/10">
-                    <Mail className="h-5 w-5 text-primary" />
+                  <div className="flex items-center gap-4 p-5 bg-primary/5 rounded-2xl border border-primary/10">
+                    <Mail className="h-6 w-6 text-primary" />
                     <div>
                       <p className="text-[9px] font-black text-primary uppercase tracking-widest">Institutional Email</p>
-                      <p className="text-xs font-black text-slate-800">innovateplushealth@gmail.com</p>
+                      <p className="text-sm font-black text-slate-800">innovateplushealth@gmail.com</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-4 pt-2">
-                <Link href="/checkout">
-                  <Button className="w-full h-16 rounded-full text-xs font-black uppercase tracking-[0.2em] bg-primary text-white hover:bg-primary/90 shadow-xl shadow-primary/20 transition-all">
-                    Send Inquiry Request <ArrowRight className="h-5 w-5 ml-2" />
-                  </Button>
-                </Link>
-                <p className="text-center text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
-                  Secure Professional Communication
+              <div className="pt-2 text-center">
+                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">
+                  Direct Professional Support
                 </p>
               </div>
             </CardContent>
