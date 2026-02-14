@@ -81,7 +81,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="container relative z-50 mx-auto px-4 flex flex-col items-center">
+            <div className="container relative z-30 mx-auto px-4 flex flex-col items-center">
               <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8 lg:gap-0">
                 {/* Image on left */}
                 <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-10 opacity-90 transition-all duration-700 hover:scale-105 border-4 border-white">
@@ -135,7 +135,7 @@ export default function Home() {
             </div>
             
             {/* Wave element */}
-            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-20 pointer-events-none">
+            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-10 pointer-events-none">
               <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-24 md:h-48 text-white fill-current">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
               </svg>
@@ -149,13 +149,13 @@ export default function Home() {
           designIndex === 1 ? "opacity-100 z-20" : "opacity-0 z-0 pointer-events-none"
         )}>
           <section className="relative h-full flex flex-col items-center justify-center px-4 overflow-hidden bg-slate-50">
-            {/* Doctor Background - Shifted left to avoid right-aligned text */}
-            <div className="absolute inset-0 w-full opacity-30 lg:opacity-40 z-0">
+            {/* Doctor Background - Shifted left further for normal mode to avoid text conflict */}
+            <div className="absolute inset-0 w-full opacity-30 lg:opacity-40 z-0 overflow-hidden">
               <Image 
                 src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920"
                 alt="Doctor Background"
                 fill
-                className="object-cover object-left"
+                className="object-cover object-left lg:translate-x-[-15%] lg:scale-110 transition-transform duration-700"
               />
             </div>
 
@@ -164,7 +164,7 @@ export default function Home() {
               <div className="w-full h-full bg-primary rounded-bl-[10rem] animate-pulse" />
             </div>
 
-            <div className="container relative z-50 mx-auto px-4 flex flex-col items-center lg:items-end text-center lg:text-right pb-40 md:pb-0">
+            <div className="container relative z-50 mx-auto px-4 flex flex-col items-center lg:items-end text-center lg:text-right pb-48 md:pb-0">
               <div className="max-w-3xl space-y-4">
                 <h1 className="text-4xl md:text-8xl font-black tracking-tight text-[#2d5a63] uppercase leading-none">
                   HEALTH PLUS<br />INNOVATION
