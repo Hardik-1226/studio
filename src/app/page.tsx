@@ -103,12 +103,12 @@ export default function Home() {
                   <p className="text-xs md:text-lg text-slate-500 max-w-md mx-auto font-bold leading-relaxed">
                     Reliable pharmaceutical products for hospitals, clinics & healthcare professionals across India.
                   </p>
-                  <div className="pt-4">
-                    <Link href="/products" className="relative z-50">
-                      <Button size="lg" className="rounded-full px-12 h-14 md:h-16 text-sm md:text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all font-black uppercase tracking-widest border-4 border-white">
+                  <div className="pt-4 relative z-50">
+                    <Button asChild size="lg" className="rounded-full px-12 h-14 md:h-16 text-sm md:text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all font-black uppercase tracking-widest border-4 border-white cursor-pointer">
+                      <Link href="/products">
                         Explore Our Products
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   </div>
                 </div>
 
@@ -135,7 +135,7 @@ export default function Home() {
             </div>
             
             {/* Wave element - Layered to sit on top of back visuals but below text */}
-            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-20">
+            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-20 pointer-events-none">
               <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-24 md:h-48 text-white fill-current">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
               </svg>
@@ -188,19 +188,19 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="pt-8 md:pt-10 relative z-40">
-                  <Link href="/products">
-                    <Button size="lg" className="rounded-full px-10 h-12 md:h-14 text-xs md:text-md bg-[#2d5a63] text-white hover:bg-[#2d5a63]/90 shadow-xl font-bold uppercase tracking-widest border-2 border-white/20">
+                <div className="pt-8 md:pt-10 relative z-50">
+                  <Button asChild size="lg" className="rounded-full px-10 h-12 md:h-14 text-xs md:text-md bg-[#2d5a63] text-white hover:bg-[#2d5a63]/90 shadow-xl font-bold uppercase tracking-widest border-2 border-white/20 cursor-pointer">
+                    <Link href="/products">
                       Shop our Products
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>
 
-            {/* Bottom Contact Bar - Improved spacing to prevent overlap */}
-            <div className="absolute bottom-6 md:bottom-10 w-full px-4 z-50">
-              <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-3 md:gap-12">
+            {/* Bottom Contact Bar */}
+            <div className="absolute bottom-6 md:bottom-10 w-full px-4 z-40 pointer-events-none">
+              <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-3 md:gap-12 pointer-events-auto">
                  <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 md:px-6 py-2.5 rounded-full shadow-lg border border-white/50 w-full md:w-auto justify-center transition-all hover:bg-white">
                     <div className="bg-[#2d5a63] p-1.5 rounded-full shrink-0"><Mail className="h-3.5 w-3.5 text-white" /></div>
                     <span className="text-[10px] md:text-sm font-black text-slate-700 truncate">innovateplushealth@gmail.com</span>
@@ -252,7 +252,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:pl-16">
             <Card className="p-8 md:p-12 border-none shadow-2xl bg-white rounded-[2.5rem] md:rounded-[3rem] hover:translate-y-[-10px] transition-all duration-500 group">
-               <div className="h-20 w-20 md:h-24 md:w-24 bg-primary/10 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center mb-8 md:submit mb-10 group-hover:bg-primary/20 transition-colors">
+               <div className="h-20 w-20 md:h-24 md:w-24 bg-primary/10 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center mb-8 md:mb-10 group-hover:bg-primary/20 transition-colors">
                 <Eye className="h-10 w-10 md:h-12 md:w-12 text-primary" />
               </div>
               <h2 className="text-2xl md:text-3xl font-black text-slate-800 mb-6 uppercase tracking-tight">Our Vision</h2>
