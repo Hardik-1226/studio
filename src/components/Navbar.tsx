@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ShoppingCart, Menu, Instagram, Twitter, Facebook, Phone, Mail, FileDown, Search, X } from 'lucide-react';
+import { Menu, Instagram, Twitter, Facebook, Phone, Mail, FileDown, Search, X, ClipboardList } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -65,7 +65,7 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
+    { name: 'Formulations', path: '/products' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -139,7 +139,6 @@ export const Navbar = () => {
             
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative h-14 w-14 flex items-center justify-center">
-                {/* Custom SVG approximating the uploaded logo */}
                 <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current group-hover:scale-105 transition-transform duration-300">
                   <path d="M50 15 C30 15 15 30 15 50 C15 70 30 85 50 85 L50 80 C35 80 20 65 20 50 C20 35 35 20 50 20 C65 20 80 35 80 50 L85 50 C85 30 70 15 50 15 Z" fill="none" stroke="currentColor" strokeWidth="4" />
                   <rect x="46" y="35" width="8" height="30" rx="1" />
@@ -184,7 +183,7 @@ export const Navbar = () => {
               <form onSubmit={handleSearchSubmit} className="relative w-48 xl:w-72">
                 <Input
                   type="text"
-                  placeholder="Search medicines..."
+                  placeholder="Search catalog..."
                   className="h-12 rounded-full pl-10 pr-4 border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-primary/20 transition-all text-[11px] font-bold"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -204,7 +203,7 @@ export const Navbar = () => {
               {showSuggestions && suggestions.length > 0 && (
                 <div className="absolute top-full right-0 w-80 bg-white shadow-2xl border border-slate-100 rounded-[2rem] mt-4 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300">
                   <div className="bg-slate-50 p-3 border-b">
-                    <p className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 px-3">Top Matches</p>
+                    <p className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 px-3">Catalog Matches</p>
                   </div>
                   {suggestions.map(p => (
                     <div 
@@ -219,9 +218,6 @@ export const Navbar = () => {
                         <p className="text-xs font-black text-slate-800 line-clamp-1 uppercase tracking-tight">{p.name}</p>
                         <p className="text-[9px] text-primary font-black uppercase tracking-widest">{p.category}</p>
                       </div>
-                      <div className="text-right">
-                        <p className="text-[10px] font-black text-slate-800">₹{p.price}</p>
-                      </div>
                     </div>
                   ))}
                 </div>
@@ -234,7 +230,7 @@ export const Navbar = () => {
             
             <Link href="/cart">
               <Button variant="ghost" size="icon" className="relative h-12 w-12 group border-2 border-primary/20 transition-all rounded-2xl bg-white shadow-sm hover:shadow-xl hover:border-primary">
-                <ShoppingCart className="h-6 w-6 text-slate-700 group-hover:text-primary transition-colors" />
+                <ClipboardList className="h-6 w-6 text-slate-700 group-hover:text-primary transition-colors" />
                 {cartCount > 0 && (
                   <Badge className="absolute -top-3 -right-3 h-7 w-7 flex items-center justify-center p-0 text-[10px] bg-accent text-accent-foreground border-4 border-white font-black rounded-full shadow-lg">
                     {cartCount}

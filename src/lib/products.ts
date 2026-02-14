@@ -3,8 +3,6 @@ export interface Product {
   name: string;
   category: string;
   description: string;
-  price: number;
-  mrp: number;
   packSize: string;
   imageUrl: string;
   images?: string[];
@@ -21,8 +19,6 @@ export const PRODUCTS: Product[] = [
     name: 'Pegno D3 Nano Shots',
     category: 'Vitamins & Supplements',
     description: 'High-concentration Vitamin D3 supplement in a convenient nano-shot format for rapid absorption and correction of Vitamin D deficiency.',
-    price: 75.00,
-    mrp: 91.88,
     packSize: '4x5ml',
     imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
     composition: ['Vitamin D3 (Cholecalciferol) - 60,000 IU'],
@@ -36,8 +32,6 @@ export const PRODUCTS: Product[] = [
     name: 'Pegno D3 Drop',
     category: 'Pediatric Care',
     description: 'Specially formulated Vitamin D3 drops for infants and children to support healthy growth and development of bones and teeth.',
-    price: 110.00,
-    mrp: 135.00,
     packSize: '15ml',
     imageUrl: 'https://images.unsplash.com/photo-1471864190281-ad5fe9ac0724?auto=format&fit=crop&q=80&w=600',
     composition: ['Vitamin D3 (Cholecalciferol) - 800 IU'],
@@ -51,8 +45,6 @@ export const PRODUCTS: Product[] = [
     name: 'P Germina',
     category: 'Gastrointestinal',
     description: 'Probiotic respules containing Bacillus Clausii to restore healthy gut flora and support digestive health during and after antibiotic treatment.',
-    price: 50.00,
-    mrp: 61.00,
     packSize: '10x5ml',
     imageUrl: 'https://images.unsplash.com/photo-1550572017-ed200f545dec?auto=format&fit=crop&q=80&w=600',
     composition: ['Bacillus Clausii - 2 Billion Spores (Respules)'],
@@ -66,10 +58,8 @@ export const PRODUCTS: Product[] = [
     name: 'CanQ-300',
     category: 'Nutraceuticals',
     description: 'Premium nutraceutical formulation for cardiac health, fertility, and cellular energy, featuring high-dose Coenzyme Q10 and antioxidants.',
-    price: 1150.00,
-    mrp: 1334.00,
     packSize: '1x10 cap',
-    imageUrl: 'https://images.unsplash.com/photo-1631549916768-4119b295f926?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://images.unsplash.com/photo-1631549916768-4119b295f929?auto=format&fit=crop&q=80&w=600',
     composition: [
       'Coenzyme Q10 (Ubidecarenone 300mg)',
       'Lycopene',
@@ -93,8 +83,6 @@ export const PRODUCTS: Product[] = [
     name: 'Herbvol Plus',
     category: 'Respiratory Care',
     description: 'Natural wellness softgel capsules designed for inhalation or oral use to provide relief from nasal congestion and respiratory discomfort.',
-    price: 110.00,
-    mrp: 135.00,
     packSize: '1x10 cap',
     imageUrl: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600',
     composition: [
@@ -113,8 +101,6 @@ export const PRODUCTS: Product[] = [
     name: 'Ecopan D',
     category: 'Gastrointestinal',
     description: 'Effective combination of a proton pump inhibitor and a prokinetic agent for the treatment of acid reflux, GERD, and associated nausea.',
-    price: 190.00,
-    mrp: 230.00,
     packSize: '1x15 cap',
     imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
     composition: ['Pantoprazole', 'Domperidone'],
@@ -128,10 +114,8 @@ export const PRODUCTS: Product[] = [
     name: 'Ecopan-40',
     category: 'Gastrointestinal',
     description: 'Standard strength Pantoprazole 40mg for the effective management of stomach ulcers, hyperacidity, and esophageal erosion.',
-    price: 175.00,
-    mrp: 215.00,
     packSize: '1x15 cap',
-    imageUrl: 'https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800',
     composition: ['Pantoprazole 40 mg'],
     benefits: ['Long-lasting relief', 'Heals stomach ulcers', 'Controls gastric acid'],
     indications: ['Peptic ulcers', 'Zollinger-Ellison syndrome', 'Hyperacidity'],
@@ -143,8 +127,6 @@ export const PRODUCTS: Product[] = [
     name: 'HPI Omega',
     category: 'Nutraceuticals',
     description: 'High-quality Omega-3 fish oil supplement rich in EPA and DHA to support cardiovascular health, brain function, and joint mobility.',
-    price: 1050.00,
-    mrp: 1299.00,
     packSize: 'Pack of 30 caps',
     imageUrl: 'https://images.unsplash.com/photo-1626716493137-b67fe9501e76?auto=format&fit=crop&q=80&w=600',
     composition: ['Omega 3 fish oil (EPA+DHA)'],
@@ -158,8 +140,6 @@ export const PRODUCTS: Product[] = [
     name: 'Durocal D3 Tablet',
     category: 'Bone Health',
     description: 'Balanced formulation of Calcium and Vitamin D3 to ensure optimal bone mineral density and prevent bone-related disorders.',
-    price: 150.00,
-    mrp: 185.00,
     packSize: '1x15 cap',
     imageUrl: 'https://images.unsplash.com/photo-1584362946021-d00474668853?auto=format&fit=crop&q=80&w=600',
     composition: [
@@ -176,8 +156,6 @@ export const PRODUCTS: Product[] = [
     name: 'Cefram 500 Tablet',
     category: 'Antibiotics',
     description: 'Broad-spectrum cephalosporin antibiotic for the effective treatment of respiratory, urinary, and soft tissue bacterial infections.',
-    price: 460.00,
-    mrp: 549.00,
     packSize: '1x 10 tab',
     imageUrl: 'https://images.unsplash.com/photo-1576086213369-97a306dca664?auto=format&fit=crop&q=80&w=600',
     composition: ['Cefuroxime Axetil 500 mg'],
@@ -191,8 +169,6 @@ export const PRODUCTS: Product[] = [
     name: 'Ecoliv 300 Tablet',
     category: 'Hepatology',
     description: 'Specialized medication for liver health, used to dissolve cholesterol gallstones and treat chronic liver diseases like primary biliary cirrhosis.',
-    price: 460.00,
-    mrp: 549.00,
     packSize: '1x10 tab',
     imageUrl: 'https://images.unsplash.com/photo-1550572017-ed200f545dec?auto=format&fit=crop&q=80&w=600',
     composition: ['Ursodeoxycholic acid I.P 300 mg'],
@@ -206,8 +182,6 @@ export const PRODUCTS: Product[] = [
     name: 'Eco Zn Drip Injection',
     category: 'Critical Care',
     description: 'Intravenous Zinc Chloride injection for intensive care patients requiring essential trace element supplementation.',
-    price: 650.00,
-    mrp: 790.00,
     packSize: '10 ml',
     imageUrl: 'https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=600',
     composition: ['Zinc Chloride Injection 2.09mg'],

@@ -26,7 +26,8 @@ import {
   ArrowRight,
   Star,
   User,
-  MessageSquare
+  MessageSquare,
+  ClipboardList
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
@@ -43,9 +44,8 @@ export default function ProductDetailsPage() {
   const [activeImage, setActiveImage] = useState(product?.imageUrl || '');
 
   const mockReviews = [
-    { id: 1, name: "Dr. Ananya Sharma", rating: 5, date: "2 months ago", comment: "Excellent quality and very effective for patients. HPI delivery was prompt." },
-    { id: 2, name: "MediClinic Pharmacy", rating: 4, date: "3 weeks ago", comment: "The packaging is professional and the stability of the drug is reliable." },
-    { id: 3, name: "Rajesh V.", rating: 5, date: "1 month ago", comment: "The best Q10 supplement I've recommended so far. Patients report high vitality." }
+    { id: 1, name: "Dr. Ananya Sharma", rating: 5, date: "2 months ago", comment: "Excellent quality and very effective for patients. HPI institutional support was prompt." },
+    { id: 2, name: "MediClinic Pharmacy", rating: 4, date: "3 weeks ago", comment: "The packaging is professional and the stability of the drug is reliable." }
   ];
 
   const relatedProducts = useMemo(() => {
@@ -53,7 +53,6 @@ export default function ProductDetailsPage() {
     let matches = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id);
     if (matches.length < 5) {
       const others = PRODUCTS.filter(p => p.category !== product.category && p.id !== product.id);
-      // Use deterministic slice instead of random sort to avoid hydration mismatches
       matches = [...matches, ...others.slice(0, 5 - matches.length)];
     }
     return matches.slice(0, 5);
@@ -71,8 +70,8 @@ export default function ProductDetailsPage() {
   const handleAddToCart = () => {
     addToCart(product, quantity);
     toast({
-      title: "Added to order",
-      description: `${quantity}x ${product.name} added to your basket.`
+      title: "Added to Inquiry Basket",
+      description: `${quantity}x ${product.name} added. View basket for institutional details.`
     });
   };
 
@@ -130,19 +129,18 @@ export default function ProductDetailsPage() {
             <Badge className="bg-primary/10 text-primary border-none uppercase text-[10px] font-bold tracking-widest px-3 py-1 rounded-full">
               {product.category}
             </Badge>
-            <h1 className="text-3xl md:text-4xl font-black text-slate-800 leading-tight tracking-tight">{product.name}</h1>
-            <div className="flex items-baseline gap-3">
-              <p className="text-2xl font-black text-primary">₹{product.price.toFixed(2)}</p>
-              <p className="text-lg text-slate-400 line-through font-bold">₹{product.mrp.toFixed(2)}</p>
-              <Badge className="bg-accent text-accent-foreground border-none font-black px-2 py-0.5 rounded-full shadow-sm text-[10px] uppercase tracking-widest ml-2">
-                Save {Math.round(((product.mrp - product.price) / product.mrp) * 100)}%
+            <h1 className="text-3xl md:text-4xl font-black text-slate-800 leading-tight tracking-tight uppercase">{product.name}</h1>
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-black text-slate-400 uppercase tracking-widest">Institutional Product</span>
+              <Badge className="bg-accent text-accent-foreground border-none font-black px-3 py-1 rounded-full shadow-sm text-[10px] uppercase tracking-widest">
+                Professional Grade
               </Badge>
             </div>
           </div>
 
           <div className="space-y-4 py-4 border-y border-slate-100">
             <div className="flex items-center gap-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Quantity</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Inquiry Qty</span>
               <div className="flex items-center gap-3 bg-slate-100 p-1 rounded-full border border-slate-200">
                 <Button 
                   variant="ghost" 
@@ -170,7 +168,7 @@ export default function ProductDetailsPage() {
                 className="flex-1 h-14 text-lg bg-primary text-white hover:bg-primary/90 rounded-full font-black shadow-lg border-4 border-primary"
                 onClick={handleAddToCart}
               >
-                <ShoppingCart className="h-5 w-5 mr-2" /> Add to Basket
+                <ClipboardList className="h-5 w-5 mr-2" /> Add to Inquiry Basket
               </Button>
             </div>
           </div>
@@ -193,7 +191,7 @@ export default function ProductDetailsPage() {
 
             <div className="space-y-2">
               <h3 className="text-slate-800 font-bold text-lg flex items-center gap-2">
-                <Info className="h-5 w-5 text-primary" /> Description
+                <Info className="h-5 w-5 text-primary" /> Product Overview
               </h3>
               <p className="text-slate-600 leading-relaxed text-sm">{product.description}</p>
             </div>
@@ -201,7 +199,7 @@ export default function ProductDetailsPage() {
             {product.benefits && (
               <div className="space-y-2">
                 <h3 className="text-slate-800 font-bold text-lg flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary" /> Key Benefits
+                  <CheckCircle2 className="h-5 w-5 text-primary" /> Professional Benefits
                 </h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {product.benefits.map((benefit, i) => (
@@ -217,7 +215,7 @@ export default function ProductDetailsPage() {
             {product.indications && (
               <div className="space-y-2">
                 <h3 className="text-slate-800 font-bold text-lg flex items-center gap-2">
-                  <Activity className="h-5 w-5 text-primary" /> Indications
+                  <Activity className="h-5 w-5 text-primary" /> Clinical Indications
                 </h3>
                 <ul className="space-y-2">
                   {product.indications.map((ind, i) => (
@@ -232,22 +230,9 @@ export default function ProductDetailsPage() {
             {product.dosage && (
               <div className="space-y-2">
                 <h3 className="text-slate-800 font-bold text-lg flex items-center gap-2">
-                  <Stethoscope className="h-5 w-5 text-primary" /> Dosage
+                  <Stethoscope className="h-5 w-5 text-primary" /> Recommended Dosage
                 </h3>
-                <p className="text-sm text-slate-600 italic">As advised by physician: {product.dosage}</p>
-              </div>
-            )}
-
-            {product.precautions && (
-              <div className="p-4 bg-orange-50 rounded-3xl border border-orange-100">
-                <h3 className="text-orange-600 font-black text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
-                  <AlertTriangle className="h-4 w-4" /> Precautions
-                </h3>
-                <ul className="space-y-1">
-                  {product.precautions.map((pre, i) => (
-                    <li key={i} className="text-xs text-slate-600 font-medium leading-relaxed">• {pre}</li>
-                  ))}
-                </ul>
+                <p className="text-sm text-slate-600 italic">Institutional advice: {product.dosage}</p>
               </div>
             )}
           </div>
@@ -258,29 +243,29 @@ export default function ProductDetailsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-1 space-y-6">
             <div>
-              <h2 className="text-2xl font-black text-slate-800">Customer Reviews</h2>
+              <h2 className="text-2xl font-black text-slate-800">Professional Feedback</h2>
               <div className="flex items-center gap-2 mt-2">
                 <div className="flex">
                   {[1, 2, 3, 4, 5].map(i => <Star key={i} className="h-4 w-4 fill-primary text-primary" />)}
                 </div>
-                <span className="text-sm font-bold text-slate-600">4.9 out of 5</span>
+                <span className="text-sm font-bold text-slate-600">Institutional Grade</span>
               </div>
             </div>
 
             <Card className="border-none bg-slate-50 rounded-[2rem]">
               <CardContent className="p-6 space-y-4">
                 <h3 className="font-bold text-slate-800 flex items-center gap-2">
-                  <MessageSquare className="h-4 w-4 text-primary" /> Write a Review
+                  <MessageSquare className="h-4 w-4 text-primary" /> Technical Review
                 </h3>
                 <form onSubmit={handleReviewSubmit} className="space-y-4">
                   <div className="space-y-1">
-                    <Label htmlFor="review-name" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Name</Label>
+                    <Label htmlFor="review-name" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Institutional Name / Dr. Name</Label>
                     <Input 
                       id="review-name" 
                       value={reviewForm.name} 
                       onChange={e => setReviewForm({...reviewForm, name: e.target.value})}
                       className="bg-white rounded-xl border-none shadow-sm h-10" 
-                      placeholder="Your name"
+                      placeholder="Dr. Rajesh"
                       required
                     />
                   </div>
@@ -300,7 +285,7 @@ export default function ProductDetailsPage() {
                     </div>
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="review-comment" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Review</Label>
+                    <Label htmlFor="review-comment" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Detailed Feedback</Label>
                     <Textarea 
                       id="review-comment" 
                       value={reviewForm.comment}
@@ -311,7 +296,7 @@ export default function ProductDetailsPage() {
                     />
                   </div>
                   <Button type="submit" className="w-full rounded-full bg-primary text-white font-bold h-10">
-                    Submit Review
+                    Submit Technical Feedback
                   </Button>
                 </form>
               </CardContent>
@@ -346,8 +331,8 @@ export default function ProductDetailsPage() {
         <section className="pt-16 border-t border-slate-100">
           <div className="flex justify-between items-end mb-8">
             <div>
-              <h2 className="text-2xl font-black text-slate-800">Recommended for You</h2>
-              <p className="text-slate-400 text-sm font-bold uppercase tracking-widest mt-1">Discover more products</p>
+              <h2 className="text-2xl font-black text-slate-800">Related Formulations</h2>
+              <p className="text-slate-400 text-sm font-bold uppercase tracking-widest mt-1">Discover more medical products</p>
             </div>
             <Link href="/products">
               <Button variant="link" className="text-primary font-bold group">
@@ -365,11 +350,8 @@ export default function ProductDetailsPage() {
                       <Image src={rel.imageUrl} alt={rel.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <div className="p-4">
-                      <h3 className="font-bold text-slate-800 group-hover:text-primary transition-colors text-xs line-clamp-1">{rel.name}</h3>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-primary font-black text-sm">₹{rel.price.toFixed(2)}</span>
-                        <span className="text-slate-400 line-through text-[9px] font-bold">₹{rel.mrp.toFixed(2)}</span>
-                      </div>
+                      <h3 className="font-bold text-slate-800 group-hover:text-primary transition-colors text-xs line-clamp-1 uppercase tracking-tight">{rel.name}</h3>
+                      <p className="text-[8px] font-black text-primary uppercase tracking-[0.2em] mt-1">Institutional</p>
                     </div>
                   </CardContent>
                 </Card>

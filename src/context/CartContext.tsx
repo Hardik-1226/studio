@@ -13,19 +13,17 @@ interface CartContextType {
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
-  cartTotal: number;
   cartCount: number;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const CART_STORAGE_KEY = 'hpi_cart_v3';
+const CART_STORAGE_KEY = 'hpi_cart_v4';
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Initial load
   useEffect(() => {
     const savedCart = localStorage.getItem(CART_STORAGE_KEY);
     if (savedCart) {
@@ -35,13 +33,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
           setCart(parsed);
         }
       } catch (e) {
-        console.error('Failed to load cart from persistence', e);
+        console.error('Failed to load inquiry basket', e);
       }
     }
     setIsInitialized(true);
   }, []);
 
-  // Sync back to storage
   useEffect(() => {
     if (isInitialized) {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
@@ -77,7 +74,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const clearCart = () => setCart([]);
 
-  const cartTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
   const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
 
   return (
@@ -87,7 +83,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       removeFromCart,
       updateQuantity,
       clearCart,
-      cartTotal,
       cartCount
     }}>
       {children}

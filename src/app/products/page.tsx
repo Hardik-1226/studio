@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Search, ShoppingCart, Zap, Package } from 'lucide-react';
+import { Search, ShoppingCart, Zap, Package, ClipboardList } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useSearchParams } from 'next/navigation';
 
@@ -41,17 +41,17 @@ function ProductsContent() {
     e.stopPropagation();
     addToCart(product, 1);
     toast({
-      title: "Added to Basket",
-      description: `${product.name} has been added to your procurement order.`
+      title: "Added to Inquiry Basket",
+      description: `${product.name} added. Proceed to basket for institutional quotes.`
     });
   };
 
   return (
     <div className="container mx-auto px-4 py-12 space-y-16">
       <div className="space-y-4">
-        <h1 className="text-5xl font-black text-slate-800 tracking-tighter uppercase">Product Catalog</h1>
+        <h1 className="text-5xl font-black text-slate-800 tracking-tighter uppercase">Institutional Catalog</h1>
         <p className="text-lg text-slate-500 max-w-xl font-medium leading-relaxed">
-          Access high-quality pharmaceutical formulations and essential supplies for institutional procurement.
+          Access high-quality pharmaceutical formulations. Add items to your inquiry basket for professional procurement support.
         </p>
       </div>
 
@@ -84,10 +84,7 @@ function ProductsContent() {
                       </div>
                       <div className="p-6 text-center">
                         <h3 className="text-lg font-bold mb-2 text-slate-800 line-clamp-1 uppercase tracking-tight">{product.name}</h3>
-                        <div className="flex items-center justify-center gap-3">
-                          <p className="text-primary font-black text-lg">₹{product.price.toFixed(2)}</p>
-                          <p className="text-slate-400 line-through text-xs font-bold">₹{product.mrp.toFixed(2)}</p>
-                        </div>
+                        <Badge variant="outline" className="text-[10px] uppercase font-black border-primary/20 text-primary">Inquiry Only</Badge>
                       </div>
                     </CardContent>
                   </Card>
@@ -113,7 +110,7 @@ function ProductsContent() {
           />
         </div>
         <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-400">
-          <Package className="h-4 w-4" /> {filteredProducts.length} Products Found
+          <Package className="h-4 w-4" /> {filteredProducts.length} Formulations Found
         </div>
       </div>
 
@@ -134,13 +131,6 @@ function ProductsContent() {
                       {product.category}
                     </Badge>
                   </div>
-                  {product.mrp > product.price && (
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-accent text-accent-foreground border-none font-black px-3 py-1 rounded-full shadow-md text-[9px] uppercase tracking-widest">
-                        Save {Math.round(((product.mrp - product.price) / product.mrp) * 100)}%
-                      </Badge>
-                    </div>
-                  )}
                 </div>
                 <CardContent className="p-8 flex flex-col flex-grow">
                   <h3 className="font-black text-xl mb-2 line-clamp-1 text-slate-800 group-hover:text-primary transition-colors uppercase tracking-tight">{product.name}</h3>
@@ -149,19 +139,15 @@ function ProductsContent() {
                   </p>
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex flex-col">
-                      <span className="text-2xl font-black text-slate-800">
-                        ₹{product.price.toFixed(2)}
-                      </span>
-                      <span className="text-xs text-slate-400 line-through font-bold">
-                        ₹{product.mrp.toFixed(2)}
-                      </span>
+                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Availability</span>
+                      <span className="text-sm font-black text-primary">In Stock</span>
                     </div>
                     <Button 
                       size="icon" 
                       className="bg-primary text-white hover:bg-primary/90 rounded-2xl h-12 w-12 shadow-xl border-4 border-primary/20 transition-all"
                       onClick={(e) => handleAddToCart(e, product)}
                     >
-                      <ShoppingCart className="h-5 w-5" />
+                      <ClipboardList className="h-5 w-5" />
                     </Button>
                   </div>
                 </CardContent>
@@ -174,7 +160,7 @@ function ProductsContent() {
           <div className="h-20 w-20 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-6">
             <Search className="h-10 w-10 text-slate-400" />
           </div>
-          <h3 className="text-2xl font-black text-slate-400 uppercase tracking-tight">No products found</h3>
+          <h3 className="text-2xl font-black text-slate-400 uppercase tracking-tight">No formulations found</h3>
           <p className="text-slate-500 font-medium mt-2">Try adjusting your search filters or browse the full catalog.</p>
           <Button variant="outline" className="mt-8 rounded-full border-primary text-primary font-black uppercase tracking-widest text-[10px] h-12 px-8" onClick={() => { setSearch(''); }}>
             Reset Search
