@@ -14,12 +14,13 @@ export const metadata: Metadata = {
   description: 'Improving healthcare across India through quality pharmaceutical products and professional support for hospitals and clinics.',
   icons: {
     icon: [
-      { url: '/favicon.ico?v=3', type: 'image/x-icon' },
-      { url: '/icons/icon-192.png?v=3', type: 'image/png', sizes: '192x192' },
-      { url: '/icons/icon-512.png?v=3', type: 'image/png', sizes: '512x512' },
+      { url: '/favicon.ico?v=4', type: 'image/x-icon' },
+      { url: '/icons/icon-192.png?v=4', type: 'image/png', sizes: '192x192' },
+      { url: '/icons/icon-512.png?v=4', type: 'image/png', sizes: '512x512' },
+      { url: '/icons/icon-1024.png?v=4', type: 'image/png', sizes: '1024x1024' },
     ],
     apple: [
-      { url: '/icons/apple-touch-icon.png?v=3', sizes: '180x180' },
+      { url: '/icons/apple-touch-icon.png?v=4', sizes: '180x180' },
     ],
   },
 };
