@@ -18,11 +18,12 @@ export const Footer = () => {
             <div className="flex flex-col items-center md:items-start gap-2">
               <div className="h-20 w-20 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current">
-                  <path d="M50 5 C25.1 5 5 25.1 5 50 C5 74.9 25.1 95 50 95 C74.9 95 95 74.9 95 50 C95 25.1 74.9 5 50 5 Z M50 91 C27.4 91 9 72.6 9 50 C9 27.4 27.4 9 50 9 C72.6 9 91 27.4 91 50 C91 72.6 72.6 91 50 91 Z" />
-                  <path d="M38 44 H44 V38 H56 V44 H62 V56 H56 V62 H44 V56 H38 V44 Z" />
-                  <circle cx="50" cy="32" r="6" />
-                  <path d="M50 40 C42 40 36 48 36 60 L50 82 L64 60 C64 48 58 40 50 40 Z" />
-                  <path d="M28 82 Q50 88 72 82 L74 80 Q50 85 26 80 Z" />
+                  <path d="M50 15 C30 15 15 30 15 50 C15 70 30 85 50 85 L50 80 C35 80 20 65 20 50 C20 35 35 20 50 20 C65 20 80 35 80 50 L85 50 C85 30 70 15 50 15 Z" fill="none" stroke="currentColor" strokeWidth="4" />
+                  <rect x="46" y="35" width="8" height="30" rx="1" />
+                  <rect x="35" y="46" width="30" height="8" rx="1" />
+                  <circle cx="50" cy="30" r="4" />
+                  <path d="M50 35 L50 48 M50 38 L42 42 M50 38 L58 42" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                  <path d="M25 80 Q50 95 75 80 L73 78 Q50 90 27 78 Z" />
                 </svg>
               </div>
               <div className="text-center md:text-left">
@@ -106,8 +107,8 @@ export const Footer = () => {
       {/* Bottom Copyright Bar */}
       <div className="bg-white py-4 border-t">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="text-[#8a6a8a] font-bold text-[10px] text-center">
-            Copyright © 2026 hpi.co.in | <Link href="/terms" className="hover:text-primary">T&amp;C</Link> | <Link href="/privacy" className="hover:text-primary">Privacy</Link> | <Link href="/shipping" className="hover:text-primary">Shipping</Link> | <Link href="/refund-policy" className="hover:text-primary">Refunds</Link>
+          <p className="text-[#8a6a8a] font-bold text-[10px] text-center uppercase">
+            Copyright © 2026 Health Plus Innovation Pvt. Ltd. | <Link href="/terms" className="hover:text-primary">T&amp;C</Link> | <Link href="/privacy" className="hover:text-primary">Privacy</Link> | <Link href="/shipping" className="hover:text-primary">Shipping</Link> | <Link href="/refund-policy" className="hover:text-primary">Refunds</Link>
           </p>
           <Button 
             variant="ghost" 

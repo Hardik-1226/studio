@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
       {/* Hero Container with Crossfade Logic */}
-      <div className="relative h-[95vh] md:h-[90vh] w-full">
+      <div className="relative h-[95vh] md:h-[90vh] w-full bg-slate-50">
         
         {/* DESIGN ONE: Innovation & Animations */}
         <div className={cn(
@@ -83,8 +83,8 @@ export default function Home() {
 
             <div className="container relative z-30 mx-auto px-4 flex flex-col items-center">
               <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8 lg:gap-0">
-                {/* Image on left - sent slightly backward with z-10 */}
-                <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-10">
+                {/* Image on left - Layered behind wave but above base background */}
+                <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-10 opacity-90 transition-all duration-700 hover:scale-105">
                   <Image 
                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
                     alt="Wellness Illustration"
@@ -103,14 +103,16 @@ export default function Home() {
                   <p className="text-xs md:text-lg text-slate-500 max-w-md mx-auto font-bold leading-relaxed">
                     Reliable pharmaceutical products for hospitals, clinics & healthcare professionals across India.
                   </p>
-                  <Link href="/products" className="relative z-50">
-                    <Button size="lg" className="rounded-full px-12 h-14 md:h-16 text-sm md:text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all font-black uppercase tracking-widest border-4 border-white">
-                      Explore Our Products
-                    </Button>
-                  </Link>
+                  <div className="pt-4">
+                    <Link href="/products" className="relative z-50">
+                      <Button size="lg" className="rounded-full px-12 h-14 md:h-16 text-sm md:text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all font-black uppercase tracking-widest border-4 border-white">
+                        Explore Our Products
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
 
-                {/* Images on right - sent slightly backward with z-10 */}
+                {/* Images on right - Layered similarly */}
                 <div className="hidden lg:flex flex-col gap-10 items-center justify-center z-10">
                   <div className="h-40 w-40 rounded-full border-8 border-white shadow-2xl overflow-hidden relative">
                     <Image 
@@ -132,7 +134,7 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Wave element - sits on top of background images but below text */}
+            {/* Wave element - Layered to sit on top of back visuals but below text */}
             <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-20">
               <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-24 md:h-48 text-white fill-current">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
@@ -148,12 +150,12 @@ export default function Home() {
         )}>
           <section className="relative h-full flex flex-col items-center justify-center px-4 overflow-hidden bg-slate-50">
             {/* Doctor Background */}
-            <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 opacity-30 lg:opacity-40 z-0">
+            <div className="absolute inset-0 w-full opacity-30 lg:opacity-40 z-0">
               <Image 
-                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200"
+                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920"
                 alt="Doctor Background"
                 fill
-                className="object-cover object-left md:object-center"
+                className="object-cover object-center"
               />
             </div>
 
@@ -162,7 +164,7 @@ export default function Home() {
               <div className="w-full h-full bg-primary rounded-bl-[10rem] animate-pulse" />
             </div>
 
-            <div className="container relative z-30 mx-auto px-4 flex flex-col items-center lg:items-end text-center lg:text-right pb-32 md:pb-0">
+            <div className="container relative z-30 mx-auto px-4 flex flex-col items-center lg:items-end text-center lg:text-right pb-40 md:pb-0">
               <div className="max-w-3xl space-y-4">
                 <h1 className="text-4xl md:text-8xl font-black tracking-tight text-[#2d5a63] uppercase leading-none">
                   HEALTH PLUS<br />INNOVATION
@@ -174,7 +176,7 @@ export default function Home() {
                 {/* Circular Product Thumbnails */}
                 <div className="flex flex-wrap justify-center lg:justify-end gap-3 md:gap-6 pt-6 md:pt-12">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="h-14 w-14 md:h-24 md:w-24 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
+                    <div key={i} className="h-14 w-14 md:h-24 md:w-24 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white hover:scale-110 transition-transform">
                       <Image 
                         src={`https://picsum.photos/seed/hpi-p-${i}/200/200`}
                         alt="Product Preview"
@@ -188,7 +190,7 @@ export default function Home() {
 
                 <div className="pt-8 md:pt-10 relative z-40">
                   <Link href="/products">
-                    <Button size="lg" className="rounded-full px-10 h-12 md:h-14 text-xs md:text-md bg-[#2d5a63] text-white hover:bg-[#2d5a63]/90 shadow-xl font-bold uppercase tracking-widest">
+                    <Button size="lg" className="rounded-full px-10 h-12 md:h-14 text-xs md:text-md bg-[#2d5a63] text-white hover:bg-[#2d5a63]/90 shadow-xl font-bold uppercase tracking-widest border-2 border-white/20">
                       Shop our Products
                     </Button>
                   </Link>
@@ -196,14 +198,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Bottom Contact Bar - Responsive to prevent overlap */}
-            <div className="absolute bottom-4 md:bottom-8 w-full px-4 z-50">
-              <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4 md:gap-16">
-                 <div className="flex items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg border border-white/50 w-full md:w-auto justify-center">
+            {/* Bottom Contact Bar - Improved spacing to prevent overlap */}
+            <div className="absolute bottom-6 md:bottom-10 w-full px-4 z-50">
+              <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-3 md:gap-12">
+                 <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 md:px-6 py-2.5 rounded-full shadow-lg border border-white/50 w-full md:w-auto justify-center transition-all hover:bg-white">
                     <div className="bg-[#2d5a63] p-1.5 rounded-full shrink-0"><Mail className="h-3.5 w-3.5 text-white" /></div>
                     <span className="text-[10px] md:text-sm font-black text-slate-700 truncate">innovateplushealth@gmail.com</span>
                  </div>
-                 <div className="flex items-center gap-3 bg-white/80 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg border border-white/50 w-full md:w-auto justify-center">
+                 <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 md:px-6 py-2.5 rounded-full shadow-lg border border-white/50 w-full md:w-auto justify-center transition-all hover:bg-white">
                     <div className="bg-[#2d5a63] p-1.5 rounded-full shrink-0"><Phone className="h-3.5 w-3.5 text-white" /></div>
                     <span className="text-[10px] md:text-sm font-black text-slate-700">+91 9266903156</span>
                  </div>

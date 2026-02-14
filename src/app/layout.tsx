@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     template: '%s | Health Plus Innovation'
   },
   description: 'Improving healthcare across India through quality pharmaceutical products and professional support for hospitals and clinics.',
+  icons: {
+    icon: '/favicon.ico', // User can place their favicon.ico in the public folder
+  },
 };
 
 export default function RootLayout({
