@@ -2,43 +2,43 @@
   "placeholderImages": [
     {
       "id": "hero-wellness-illustration",
-      "description": "Wellness illustration for the first hero design",
+      "description": "Wellness illustration for the first hero design (Design One)",
       "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600",
       "imageHint": "wellness illustration"
     },
     {
       "id": "hero-medical-professional",
-      "description": "Circle image of a medical professional",
+      "description": "Circle image of a medical professional for Design One",
       "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dad99a01?auto=format&fit=crop&q=80&w=300",
       "imageHint": "medical professional"
     },
     {
       "id": "hero-lab-research",
-      "description": "Circle image of laboratory research",
+      "description": "Circle image of laboratory research for Design One",
       "imageUrl": "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=400",
       "imageHint": "laboratory research"
     },
     {
       "id": "hero-doctor-background",
-      "description": "Background image for the second hero design",
+      "description": "Background image of a doctor for Design Two (Institutional Slide)",
       "imageUrl": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920",
       "imageHint": "doctor background"
     },
     {
-      "id": "about-quality-commitment",
-      "description": "Image representing quality pharmaceutical commitment",
-      "imageUrl": "https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800",
-      "imageHint": "quality commitment"
-    },
-    {
       "id": "about-lab-main",
-      "description": "Main laboratory image for the about page",
+      "description": "Main laboratory image for the About Us page",
       "imageUrl": "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=800",
       "imageHint": "pharmaceutical lab"
     },
     {
+      "id": "about-quality-commitment",
+      "description": "Image representing quality pharmaceutical commitment used in About Us and Home",
+      "imageUrl": "https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800",
+      "imageHint": "quality commitment"
+    },
+    {
       "id": "partner-logo-placeholder",
-      "description": "Placeholder for partner hospital logos",
+      "description": "General placeholder logo for Trusted Partners (Hospitals)",
       "imageUrl": "https://images.unsplash.com/photo-1758922801699-09d8d788f90c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXJ0bmVyJTIwbG9nb3xlbnwwfHx8fDE3NzEwNjYxMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "partner logo"
     }
