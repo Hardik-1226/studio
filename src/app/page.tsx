@@ -14,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setDesignIndex((prev) => (prev === 0 ? 1 : 0));
-    }, 3000);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
