@@ -142,7 +142,7 @@ export const Navbar = () => {
             </Sheet>
             
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative h-14 w-14 flex items-center justify-center">
+              <div className="relative h-20 w-20 md:h-24 md:w-24 flex items-center justify-center">
                 <Image 
                   src={getImageUrl('site-logo')} 
                   alt="Health Plus Innovation" 

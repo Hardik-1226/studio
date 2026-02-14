@@ -21,7 +21,7 @@ export const Footer = () => {
           {/* Left Column: Logo and Description */}
           <div className="space-y-6">
             <div className="flex flex-col items-center md:items-start gap-2">
-              <div className="h-20 w-20 relative flex items-center justify-center">
+              <div className="h-32 w-32 relative flex items-center justify-center">
                 <Image 
                   src={getImageUrl('site-logo')} 
                   alt="Health Plus Innovation Logo" 
