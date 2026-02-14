@@ -1,52 +1,46 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-1",
-      "description": "Modern pharmaceutical research laboratory",
-      "imageUrl": "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGxhYnxlbnwwfHx8fDE3NzA5MjIxNzh8MA&ixlib=rb-4.1.0&q=80&w=1920",
-      "imageHint": "pharmaceutical lab"
+      "id": "hero-wellness-illustration",
+      "description": "Wellness illustration for the first hero design",
+      "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600",
+      "imageHint": "wellness illustration"
     },
     {
-      "id": "hero-2",
-      "description": "Healthcare professionals collaborating",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dad99a01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFsc3xlbnwwfHx8fDE3NzA5MjIxNzh8MA&ixlib=rb-4.1.0&q=80&w=1920",
-      "imageHint": "healthcare professionals"
+      "id": "hero-medical-professional",
+      "description": "Circle image of a medical professional",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dad99a01?auto=format&fit=crop&q=80&w=300",
+      "imageHint": "medical professional"
     },
     {
-      "id": "about-image",
-      "description": "Medicine manufacturing and quality control",
-      "imageUrl": "https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwaGFybWFjZXV0aWNhbCUyMG1hbnVmYWN0dXJpbmd8ZW58MHx8fHwxNzcwOTIyMTc4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pharmaceutical manufacturing"
-    },
-    {
-      "id": "doctor-1",
-      "description": "Medical professional portrait",
-      "imageUrl": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400",
-      "imageHint": "doctor portrait"
-    },
-    {
-      "id": "doctor-2",
-      "description": "Healthcare worker illustration style",
-      "imageUrl": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=400",
-      "imageHint": "nurse portrait"
-    },
-    {
-      "id": "med-circle-1",
-      "description": "Laboratory work close up",
-      "imageUrl": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=300",
+      "id": "hero-lab-research",
+      "description": "Circle image of laboratory research",
+      "imageUrl": "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=400",
       "imageHint": "laboratory research"
     },
     {
-      "id": "med-circle-2",
-      "description": "Medical examination",
-      "imageUrl": "https://images.unsplash.com/photo-1584982324675-bc7557116812?auto=format&fit=crop&q=80&w=300",
-      "imageHint": "medical equipment"
+      "id": "hero-doctor-background",
+      "description": "Background image for the second hero design",
+      "imageUrl": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920",
+      "imageHint": "doctor background"
     },
     {
-      "id": "partner-placeholder",
-      "description": "Corporate logo placeholder",
-      "imageUrl": "https://images.unsplash.com/photo-1759365400065-ab88a7b8e82f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3Jwb3JhdGUlMjBsb2dvfGVufDB8fHx8MTc3MDgzODA2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "corporate logo"
+      "id": "about-quality-commitment",
+      "description": "Image representing quality pharmaceutical commitment",
+      "imageUrl": "https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800",
+      "imageHint": "quality commitment"
+    },
+    {
+      "id": "about-lab-main",
+      "description": "Main laboratory image for the about page",
+      "imageUrl": "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=800",
+      "imageHint": "pharmaceutical lab"
+    },
+    {
+      "id": "partner-logo-placeholder",
+      "description": "Placeholder for partner hospital logos",
+      "imageUrl": "https://images.unsplash.com/photo-1758922801699-09d8d788f90c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXJ0bmVyJTIwbG9nb3xlbnwwfHx8fDE3NzEwNjYxMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "partner logo"
     }
   ]
 }

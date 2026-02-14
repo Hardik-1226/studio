@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -9,6 +10,7 @@ import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity, Star, Mai
 import { cn } from '@/lib/utils';
 import { PRODUCTS } from '@/lib/products';
 import { Badge } from '@/components/ui/badge';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const [designIndex, setDesignIndex] = useState(0);
@@ -19,6 +21,8 @@ export default function Home() {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
 
   const partners = [
     { name: "Max Gurgaon", text: "Hospital Partner" },
@@ -85,10 +89,11 @@ export default function Home() {
               <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8 lg:gap-0">
                 <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-0 opacity-90 border-4 border-white">
                   <Image 
-                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
+                    src={getImage('hero-wellness-illustration')}
                     alt="Wellness Illustration"
                     fill
                     className="object-cover"
+                    data-ai-hint="wellness illustration"
                   />
                 </div>
 
@@ -114,18 +119,20 @@ export default function Home() {
                 <div className="hidden lg:flex flex-col gap-10 items-center justify-center z-0">
                   <div className="h-40 w-40 rounded-full border-8 border-white shadow-2xl overflow-hidden relative">
                     <Image 
-                      src="https://images.unsplash.com/photo-1576091160550-2173dad99a01?auto=format&fit=crop&q=80&w=300"
+                      src={getImage('hero-medical-professional')}
                       alt="Medical Professional"
                       fill
                       className="object-cover"
+                      data-ai-hint="medical professional"
                     />
                   </div>
                   <div className="h-52 w-52 rounded-full border-8 border-white shadow-2xl overflow-hidden relative translate-x-12">
                     <Image 
-                      src="https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=400"
+                      src={getImage('hero-lab-research')}
                       alt="Laboratory Research"
                       fill
                       className="object-cover"
+                      data-ai-hint="laboratory research"
                     />
                   </div>
                 </div>
@@ -149,10 +156,11 @@ export default function Home() {
           <section className="relative h-full flex flex-col items-center justify-center px-4 overflow-hidden bg-slate-50">
             <div className="absolute inset-0 w-full opacity-30 lg:opacity-40 z-0 overflow-hidden">
               <Image 
-                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920"
+                src={getImage('hero-doctor-background')}
                 alt="Doctor Background"
                 fill
                 className="object-cover object-left lg:translate-x-[-20%] lg:scale-105 transition-transform duration-700"
+                data-ai-hint="doctor background"
               />
             </div>
 
@@ -171,7 +179,7 @@ export default function Home() {
                     return (
                       <div key={i} className="h-14 w-14 md:h-24 md:w-24 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
                         <Image 
-                          src={prod?.imageUrl || `https://picsum.photos/seed/hpi-p-${i}/200/200`}
+                          src={prod?.imageUrl || getImage('partner-logo-placeholder')}
                           alt="Product Showcase"
                           width={200}
                           height={200}
@@ -230,10 +238,11 @@ export default function Home() {
             </div>
             <div className="relative h-[300px] md:h-[450px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-slate-50">
               <Image
-                src="https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800"
+                src={getImage('about-quality-commitment')}
                 alt="Quality Commitment"
                 fill
                 className="object-cover"
+                data-ai-hint="quality commitment"
               />
             </div>
           </div>
@@ -307,7 +316,7 @@ export default function Home() {
               <div key={index} className="flex flex-col items-center p-6 bg-slate-50 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 text-center space-y-4 group border border-slate-100">
                 <div className="relative h-16 w-24 md:h-20 md:w-32 opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
                   <Image
-                    src={`https://picsum.photos/seed/hpi-inst-${index}/400/200`}
+                    src={getImage('partner-logo-placeholder')}
                     alt={partner.name}
                     fill
                     className="object-contain"

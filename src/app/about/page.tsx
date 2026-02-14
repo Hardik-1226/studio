@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -7,8 +8,7 @@ import { CheckCircle2, Target, Users, Shield, Heart, Activity } from 'lucide-rea
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function AboutPage() {
-  const aboutImage = PlaceHolderImages.find(img => img.id === 'about-image');
-  const labImage = "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=800";
+  const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
 
   return (
     <div className="flex flex-col w-full pb-20">
@@ -37,10 +37,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[400px] w-full max-w-md mx-auto rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-50">
               <Image
-                src={labImage}
+                src={getImage('about-lab-main')}
                 alt="Who We Are - HPI"
                 fill
                 className="object-cover"
+                data-ai-hint="pharmaceutical lab"
               />
             </div>
             <div className="space-y-8">
@@ -138,10 +139,11 @@ export default function AboutPage() {
             
             <div className="order-1 lg:order-2 relative h-[450px] w-full rounded-[4rem] overflow-hidden shadow-2xl group border-4 border-slate-50">
               <Image
-                src={aboutImage?.imageUrl || labImage}
+                src={getImage('about-quality-commitment')}
                 alt="Why Choose HPI"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
+                data-ai-hint="quality commitment"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8 text-white">
