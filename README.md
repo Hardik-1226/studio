@@ -1,4 +1,13 @@
 # HealthPlus
 
+HealthPlus Website - A pharmaceutical marketing platform for institutional healthcare solutions.
+
+## About
 This website is made by Hardik Varshney.
-FrameWork Used : React.js , Next.js , tailwind
+
+## Tech Stack
+- React.js
+- Next.js
+- Tailwind CSS
+
+
