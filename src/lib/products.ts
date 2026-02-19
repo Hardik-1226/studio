@@ -20,7 +20,7 @@ export const PRODUCTS: Product[] = [
     category: 'Vitamins & Supplements',
     description: 'High-concentration Vitamin D3 supplement in a convenient nano-shot format for rapid absorption and correction of Vitamin D deficiency.',
     packSize: '4x5ml',
-    imageUrl: '/Medicine%20Images/Pegno%20D3%20NanoShots.png',
+    imageUrl: '/Medicine%20Images/pegno%20shots.png',
     
     composition: ['Vitamin D3 (Cholecalciferol) - 60,000 IU'],
     benefits: ['Supports bone health', 'Enhances immunity', 'Rapid absorption'],
@@ -34,7 +34,7 @@ export const PRODUCTS: Product[] = [
     category: 'Pediatric Care',
     description: 'Specially formulated Vitamin D3 drops for infants and children to support healthy growth and development of bones and teeth.',
     packSize: '15ml',
-    imageUrl: '/Medicine%20Images/PegnoD3.png',
+    imageUrl: '/Medicine%20Images/pegno%20drops.png',
     images: [
       '/Medicine%20Images/Pegno%20D3%20Side%20view%202.png'
     ],
@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
     category: 'Nutraceuticals',
     description: 'Premium nutraceutical formulation for cardiac health, fertility, and cellular energy, featuring high-dose Coenzyme Q10 and antioxidants.',
     packSize: '1x10 cap',
-    imageUrl: '/Medicine%20Images/Canq300.png',
+    imageUrl: '/Medicine%20Images/can%20q%20image.png',
     composition: [
       'Coenzyme Q10 (Ubidecarenone 300mg)',
       'Lycopene',
@@ -87,12 +87,12 @@ export const PRODUCTS: Product[] = [
     precautions: ['Consult doctor before use if pregnant']
   },
   {
-    id: 'herbvol-plus',
-    name: 'Herbvol Plus',
+    id: 'karvol-plus',
+    name: 'Karvol Plus',
     category: 'Respiratory Care',
     description: 'Natural wellness softgel capsules designed for inhalation or oral use to provide relief from nasal congestion and respiratory discomfort.',
     packSize: '1x10 cap',
-    imageUrl: '/Medicine%20Images/Camphor.png',
+    imageUrl: '/Medicine%20Images/karvol%20plus.png',
     images: [
       '/Medicine%20Images/CamphorSide.png'
     ],
@@ -113,7 +113,7 @@ export const PRODUCTS: Product[] = [
     category: 'Gastrointestinal',
     description: 'Effective combination of a proton pump inhibitor and a prokinetic agent for the treatment of acid reflux, GERD, and associated nausea.',
     packSize: '1x15 cap',
-    imageUrl: '/Medicine%20Images/Pantoprazole%20Ecopan-D.png',
+    imageUrl: '/Medicine%20Images/ecopan%20d.png',
     images: [
       '/Medicine%20Images/Pantropazole%20Ecopan_D%20side.png'
     ],
@@ -129,7 +129,7 @@ export const PRODUCTS: Product[] = [
     category: 'Gastrointestinal',
     description: 'Standard strength Pantoprazole 40mg for the effective management of stomach ulcers, hyperacidity, and esophageal erosion.',
     packSize: '1x15 cap',
-    imageUrl: '/Medicine%20Images/Pantoprazole%20Front.png',
+    imageUrl: '/Medicine%20Images/eco%20pan%2040.png',
     images: [
       '/Medicine%20Images/Pantoprale.png'
     ],
@@ -145,7 +145,7 @@ export const PRODUCTS: Product[] = [
     category: 'Nutraceuticals',
     description: 'High-quality Omega-3 fish oil supplement rich in EPA and DHA to support cardiovascular health, brain function, and joint mobility.',
     packSize: 'Pack of 30 caps',
-    imageUrl: '/Medicine%20Images/HPI%20Omega.png',
+    imageUrl: '/Medicine%20Images/hpi%20omega.png',
     composition: ['Omega 3 fish oil (EPA+DHA)'],
     benefits: ['Supports heart health', 'Improves brain function', 'Reduces joint inflammation'],
     indications: ['High cholesterol', 'Cognitive support', 'Arthritis adjunct'],
@@ -158,7 +158,7 @@ export const PRODUCTS: Product[] = [
     category: 'Bone Health',
     description: 'Balanced formulation of Calcium and Vitamin D3 to ensure optimal bone mineral density and prevent bone-related disorders.',
     packSize: '1x15 cap',
-    imageUrl: '/Medicine%20Images/Calcium%20Carbonate.png',
+    imageUrl: '/Medicine%20Images/durocal%20tab.png',
     images: [
       '/Medicine%20Images/Calcium%20Carbone%202.png'
     ],
@@ -177,7 +177,7 @@ export const PRODUCTS: Product[] = [
     category: 'Antibiotics',
     description: 'Broad-spectrum cephalosporin antibiotic for the effective treatment of respiratory, urinary, and soft tissue bacterial infections.',
     packSize: '1x 10 tab',
-    imageUrl: '/Medicine%20Images/Cefuroxime.png',
+    imageUrl: '/Medicine%20Images/cefram.png',
     images: [
       '/Medicine%20Images/Cefuroxime%202.png'
     ],
@@ -206,7 +206,7 @@ export const PRODUCTS: Product[] = [
     category: 'Critical Care',
     description: 'Intravenous Zinc Chloride injection for intensive care patients requiring essential trace element supplementation.',
     packSize: '10 ml',
-    imageUrl: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/eco%20zn.png',
     composition: ['Zinc Chloride Injection 2.09mg'],
     benefits: ['Essential for immunity', 'Aids wound healing', 'Crucial in critical care'],
     indications: ['Zinc deficiency', 'Total Parenteral Nutrition (TPN)', 'Critical illness'],
